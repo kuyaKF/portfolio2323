@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+		<!-- Jquery -->
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/forms.css">
+		<!-- datejs -->
+		<script src="js/date.min.js"></script>
+		<style>
+			/*steps with horizontal line*/
+
+			:root{
+				--c1:red;
+			}
+
+.progress-list{
+	counter-reset: prog;
+	width:100%;
+	max-width:max-content;
+	margin-inline: auto;
+}
+
+.progress-list > div{
+	display:grid;
+	grid-template-columns: 4em minmax(0,1fr);
+	position: relative;
+	counter-increment: prog;
+	gap:2em;
+}
+
+.progress-list > div > .counter{
+	min-width:4em;
+	position: relative;
+}
+
+.progress-list > div > .counter:before{
+	position: absolute;
+	top:50%;
+	left:0;
+	transform: translateY(-50%);
+	width:2em;
+	aspect-ratio: 1/1;
+	background:var(--c1);
+	color:#fff;
+	content:counter(prog);
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	font-size:2em;
+	border-radius:99em;
+	font-weight:800;
+}
+
+.progress-list > div > .counter:after{
+	position: absolute;
+	height:100%;
+	width:4px;
+	left:50%;
+	top:50%;
+	transform:translateX(-50%);
+	background:var(--c1);
+	content:'';
+	z-index:-1;
+}
+
+.progress-list > div > .inner{
+
+	padding:2em 0;
+}
+
+
+.progress-list > div:last-child > .counter:after{
+	display:none;
+}
+		</style>
+	</head>
+	<body>
+		<div class="progress-list">
+			<div>
+				<div class="counter"></div>
+				<div class="inner">
+					<div class="s-h">You get started!</div>
+					<div class="p">Let us help you find relief by negotiating with your creditors to lower your monthly payments and interest rates.</div>
+				</div>
+			</div>
+			<div>
+				<div class="counter"></div>
+				<div class="inner">
+					<div class="s-h">You can afford your consolidated payment</div>
+					<div class="p">Consolidate your debt into one easy monthly payment. Leave the hassle of distribution to your creditors to us.</div>
+				</div>
+			</div>
+			<div>
+				<div class="counter"></div>
+				<div class="inner">
+					<div class="s-h">The door to a debt-free world opens!</div>
+					<div class="p">Get a fresh start! Clear your debt, obtain a clearance certificate, and reclaim financial freedom with access to credit once again.</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
