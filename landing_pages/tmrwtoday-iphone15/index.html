@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>iPhone 15</title>
+		<!-- Jquery -->
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/forms.css">
+		<!-- datejs -->
+		<script src="js/date.min.js"></script>
+		<!-- owl js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		<!-- flip -->
+		<link rel="stylesheet" href="flip/flipclock.css">
+		
+		<script src="flip/flipclock.js"></script>
+	</head>
+	<body>
+		<div class="section main">
+			<div class="cw">
+				<div class="main-grid">
+					<div>
+						<h1 class="s-t">Congratulations<br/><b>You're today's lucky one</b></h1>
+					</div>
+					<div>
+						<div>
+							<div class="your-clock"></div>
+						</div>
+					</div>
+					<div>
+						<h2 class="s-t item-name">iPhone 15 Pro</h2>
+						<img src="img/iphone15.webp" class="img-block fw item-img">
+					</div>
+					<div>
+						<div class="form-panel gradientbg">
+							<h2 class="s-h">Fill in your details</h2>
+							<div class="form-wrapper" style="--formcol:2">
+								<div class="form-input form-inline" style="--colspan:1">
+									<input type="text" placeholder="First name">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input form-inline" style="--colspan:1">
+									<input type="text" placeholder="Last name">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input">
+									<input type="text" placeholder="Address">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input form-inline" style="--colspan:1">
+									<input type="text" placeholder="Zip/Postcode">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input form-inline" style="--colspan:1">
+									<input type="text" placeholder="City">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input">
+									<select placeholder="Country">
+										<option disabled selected value=""></option>
+										<option>Option</option>
+										<option>Option</option>
+										<option>Option</option>
+									</select>
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input">
+									<input type="text" placeholder="Phone">
+									<span class="form-label"></span>
+								</div>
+								<div class="form-input">
+									<input type="text" placeholder="E-mail">
+									<span class="form-label"></span>
+								</div>
+								
+								
+
+								<button class="form-btn btn-s c1 c1-lighten btn-fun">Continue</button>
+								<div class="disclaimer">By clicking “Continue”, I confirm that I have read, consented to, and accepted the Terms and Conditions, the Privacy Policy, and that I am at least 18 years of age.<br/><br/></div>	
+								<div class="form-input form-checkbox disclaimer">
+									<label>
+										<input type="checkbox"><span></span>
+
+										I agree to receive newsletters notifications, offers and communications services.
+									</label>
+								</div>
+							</div>
+								
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section s1">
+			<div class="cw">
+				<div class="grid-row" style="gap:5em;align-items:center">
+					<div><p>This is a special deal that offers 3 days of full access to our loyalty club only for ₱114. After this time, the full membership at the then-current rate (₱1,362.48) will be automatically charged to your payment method every 14 days until canceled. If for any reason you are not satisfied with the service, you can unsubscribe from the services by contacting our customer support or logging into your account.</p></div>
+					<div>
+						<img src="img/cards.png" class="cards">
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+
+			function formlabels(container){
+				container.find('.form-label').each(function(){
+					let forminput = $(this).prev();
+					let label = forminput.attr('placeholder');
+					$(this).text(label);
+					forminput.attr('placeholder','');
+				});
+			}
+
+			$(function(){
+				formlabels($('.form-wrapper'));
+
+				var clock = $('.your-clock').FlipClock(60 * 5, {
+					clockFace: 'MinuteCounter',
+					countdown: true,
+					showSeconds: true
+					
+				});
+			});
+
+			$(document).on('keyup','.form-input input',function(e){
+				if(!$(this).val()){
+					$(this).parent().removeClass('active');
+				}else{
+					$(this).parent().addClass('active');
+				}
+			});
+
+			$(document).on('change','.form-input select',function(e){
+				if(!$(this).val()){
+					$(this).parent().removeClass('active');
+				}else{
+					$(this).parent().addClass('active');
+				}
+			});
+
+
+
+		</script>
+	</body>
+</html>
