@@ -312,6 +312,11 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 	justify-content: center;
 }
 
+.behind-upper{
+	font-size:1.2em;
+	letter-spacing: -.0125em;
+}
+
 .white-panel > div,
 .behind > div{
 	padding:1rem;
