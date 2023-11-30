@@ -362,6 +362,8 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 	display:block;
 	width:70%;
 	border-radius:100%;
+	
+	backface-visibility: hidden;
 }
 
 .profile .panel-body{
