@@ -493,8 +493,23 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
   background-color: #a8bbbf;
 }*/
 
-.white-panel:hover .viewer-display img{
+/*.white-panel:hover .viewer-display img{
 	transform:translateY(-20%);
+
+}*/
+
+.white-panel:not(.profile) .viewer-display img{
+	animation: scrollanim 15s infinite;
+	animation-delay: calc(.3s * var(--i));
+}
+
+@keyframes scrollanim{
+	0%,60%,100%{
+		transform:translateY(0);
+	}
+	40%{
+		transform:translateY(-20%);
+	}
 
 }
 
