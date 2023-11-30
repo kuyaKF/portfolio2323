@@ -229,7 +229,11 @@
 		$(function(){
 			setInterval(function(){
 				$(".profile").toggleClass("active");
-			},7000)
+			},10000);
+
+			$(document).on("click",".profile",function(){
+				$(this).toggleClass("active");
+			});
 		});
 	</script>
 </html>

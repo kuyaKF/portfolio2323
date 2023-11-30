@@ -282,7 +282,7 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 
 .white-panel.profile.active
 {
-	transform:rotateY(180deg);
+	transform:rotateY(180deg) !important;
 }
 
 .white-panel.profile .panel-upper,
