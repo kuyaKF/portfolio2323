@@ -318,13 +318,10 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 }
 
 .white-panel:not(.profile){
-	transform:perspective(100vw) scale(.9) rotateX(17deg) rotateZ(3deg) rotateY(-23deg);
-	transition:.3s ease-in-out;
+
 }
 
-.white-panel:hover{
-	transform:perspective(100vw) scale(1) rotateX(0deg) rotateZ(0deg) rotateY(0deg);
-}
+
 
 .white-panel.profile{
 
@@ -362,7 +359,7 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 	display:block;
 	width:70%;
 	border-radius:100%;
-	
+
 	backface-visibility: hidden;
 }
 
@@ -443,7 +440,7 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 	left:4%;
 	top:16%;
 	transform: perspective(100vw) rotateY(-47deg) rotateX(19deg) rotateZ(3.5deg) skewX(19deg) skewY(-7deg);
-	overflow:auto !important;
+	overflow:hidden;
 }
 
 .m-viewer .viewer-display{
@@ -454,21 +451,21 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 	left:1.5%;
 	top:13%;
 	transform: perspective(100vw) rotateY(-45deg) rotateX(6deg) rotateZ(-22deg) skewX(-17deg) skewY(24deg);
-	overflow:auto !important;
+	overflow:hidden;
 	border-radius:.5vw;
 }
 
 .viewer-display img{
 	display:block;
 	width:100%;
-
+	transition:1s ease-in-out;
 }
 
 .main-grid > div{
 	margin-bottom:0 !important;
 }
 
-::-webkit-scrollbar {
+/*::-webkit-scrollbar {
   width: 5px;
 }
 
@@ -494,7 +491,13 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: #a8bbbf;
+}*/
+
+.white-panel:hover .viewer-display img{
+	transform:translateY(-20%);
+
 }
+
 
 @media(max-width: 1200px){
 	body{
