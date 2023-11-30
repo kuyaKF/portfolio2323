@@ -500,7 +500,7 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 
 .white-panel:not(.profile) .viewer-display img{
 	animation: scrollanim 15s infinite;
-	animation-delay: calc(.3s * var(--i));
+	animation-delay: calc(.4s * var(--i));
 }
 
 @keyframes scrollanim{
