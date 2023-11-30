@@ -522,7 +522,7 @@ background: linear-gradient(135deg,  #a7cfdf 0%,#23538a 100%); /* W3C, IE10+, FF
 		border-radius:1.5vw;
 	}
 
-	.white-panel{
+	.white-panel:not(.profile){
 		transform:none !important;
 	}
 }
