@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+		<!-- Jquery -->
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/forms.css">
+		<!-- datejs -->
+		<script src="js/date.min.js"></script>
+		<!-- owl js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<div class="container">
+			<div class="panel" style="--dbg:url('../img/dolomites.jpg');--brightness:.7;" data-i="0">
+				<div class="bg"></div>
+				<div class="main"></div>
+			</div>
+			<div class="panel-text">
+				<span class='s-t'>
+					<span>Dolomites</span>
+				</span>
+			</div>
+		</div>
+		<script>
+
+			$(function(){
+				// setTimeout(function(){
+				// 	$(".panel").addClass("rotate");
+
+				// 	setTimeout(function(){
+				// 		$(".panel").attr("style","--dbg:url('../img/highlands.jpg')")
+				// 	},500)
+				// },500)
+
+				let cards = [];
+
+				cards.push({
+					img: 'dolomites',
+					text: 'Dolomites',
+					brightness: '.7'
+				});
+
+				cards.push({
+					img: 'highlands',
+					text: 'Highlands',
+					brightness: '.7'
+				})
+
+				cards.push({
+					img: 'forests',
+					text: 'Forests',
+					brightness: '.45'
+				})
+
+				cards.push({
+					img: 'desert2',
+					text: 'Sahara',
+					brightness: '.9'
+				})
+
+				$(document).on("click",".panel",function(){
+
+					$(".panel").addClass("rotate");
+
+
+					let i = $(".panel").data("i");
+
+
+					if(i==(cards.length-1)){
+						i=0;
+					}else{
+						i++;
+					}
+
+					
+
+					$(".panel").data("i",i);
+
+					setTimeout(function(){
+						$(".panel").attr("style","--dbg:url('../img/"+cards[i].img+".jpg');--brightness:"+cards[i].brightness+";");
+
+						setTimeout(function(){
+
+							$(".panel-text .s-t").text(cards[i].text);
+						},500)
+
+						setTimeout(function(){
+							$(".panel").removeClass("rotate");
+						},2000)
+					},500)
+
+
+				});
+			});
+
+
+
+		</script>
+	</body>
+</html>
