@@ -10,9 +10,9 @@ body,html{
 
 :root{
 
-	--c1-h: 219;
-	--c1-s: 52%;
-	--c1-l: 22%;
+	--c1-h: 36;
+	--c1-s: 100%;
+	--c1-l: 52%;
 
 	--c1: hsl(var(--c1-h),
 	 var(--c1-s), 
@@ -44,9 +44,9 @@ body,html{
 	    calc(var(--c1-l) * 1.8)
 	);
 
-	--c2-h: 149;
-	--c2-s: 78%;
-	--c2-l: 32%;
+	--c2-h: 216;
+	--c2-s: 100%;
+	--c2-l: 55%;
 
 	--c2: hsl(var(--c2-h),
 	 var(--c2-s), 
@@ -234,8 +234,8 @@ body,html{
 .tb-logo > img{
 	display:block;
 	width:100%;
-	aspect-ratio:21/9;
-	padding:.5em 1em;
+	aspect-ratio:26/9;
+	padding:.25em 0em;
 	object-fit: contain;
 }
 
@@ -329,6 +329,7 @@ body,html{
 	height:100%;
 	object-fit: cover;
 	z-index:-1;
+	pointer-events: none;
 }
 
 .s1-row{
@@ -343,7 +344,7 @@ body,html{
 
 .form-panel{
 	background:var(--c1-whiten);
-	color:#fff;
+/*	color:#fff;*/
 	padding:5%;
 }
 
@@ -366,7 +367,7 @@ body,html{
 .main-img .circle{
 	width:7.25em;
 	aspect-ratio: 1/1;
-	background:#129250;
+	background:var(--c2);
 	color:#fff;
 	text-align: center;
 	position: absolute;
@@ -831,7 +832,7 @@ body,html{
 
 .form-panel .s-h{
 	font-size:1.5em;
-	color:#fff;
+/*	color:#fff;*/
 }
 
 .answer-grid .btn-s{
@@ -885,7 +886,7 @@ body,html{
 }
 
 .q-counter > div{
-	background:var(--c2-whiten);
+	background:var(--c1-lighten);
 	height:.25em;
 	border-radius:99em;
 }
@@ -928,7 +929,7 @@ body,html{
 .whyareweasking{
 	display:inline-block;
 	font-family: var(--subfont);
-	color:#fff;
+	color:#666;
 	margin-block:1em;
 }
 

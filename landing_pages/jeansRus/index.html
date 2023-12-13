@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+		<!-- Jquery -->
+		<script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/animate.css">
+		<link rel="stylesheet" href="css/styles.css">
+		<link rel="stylesheet" href="css/forms.css">
+		<!-- datejs -->
+		<script src="js/date.min.js"></script>
+		<!-- owl js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	</head>
+	<body>
+		<div class="hero-fw">
+			<div class="hero-info">
+				<div class="brand-bar">
+					<div>
+						<div class="bb-logo">jeansRus</div>
+					</div>
+					<div>
+						<a href="javascript:void(0);" class="bb-toggle">
+							<div class="bb-toggle-display"></div>
+						</a>
+					</div>
+				</div>
+				<div class="hero-text">
+					<div class="sub-wrapper">
+						<p>There's something magnificent in our art of jean weaving. The denim fabric we use, the process, the cutting, the stitching, the weaving, the finishing touches: all of it is exemplary!</p>
+					</div>
+					<h1 class="hero-heading">The influential philosophy of the jean fabric creation</h1>
+					<a href="javascript:void(0);" class="btn-s hero-cta">View collection <i class="bi bi-chevron-right"></i></a>
+
+					<div class="carousel-dots">
+						<a data-img="img/main.jpg" href="javascript:void(0);" class="active"></a>	
+
+						<a data-img="img/sub.jpg" href="javascript:void(0);"></a>						
+						<a data-img="img/a1.jpg" href="javascript:void(0);"></a>
+						<a data-img="img/a2.jpg" href="javascript:void(0);"></a>
+						<a data-img="img/a3.jpg" href="javascript:void(0);"></a>	
+					</div>
+				</div>
+			</div>
+			<div class="hero-img">
+				<div class="hero-img-text">
+					<div>USD 32.00</div>
+					<div>Free Shipping</div>
+				</div>
+				<div class="main img-wrap">
+					<img src="img/main.jpg">
+				</div>
+				<div class="sub img-wrap">
+					<img src="img/sub.jpg">
+				</div>
+			</div>
+		</div>
+		<script>
+
+			$(function(){
+
+				$(document).on("click",".carousel-dots > a",function(){
+					let carousel = $(this).parent();
+
+					carousel.addClass("active").find("> a").removeClass("active");
+					$(this).addClass("active");
+
+					let imgsrc = $(this).data("img");
+
+					let imgsrc2 = $(".hero-img .main > img").attr("src");
+
+					$(".hero-img .main").prepend("<img src='"+imgsrc+"' class='sliding'>");
+
+					$(".hero-img .sub").prepend("<img src='"+imgsrc2+"' class='sliding'>");
+
+					setTimeout(function(){
+						$(".hero-img .main, .hero-img .sub").find("img:not('.sliding')").remove();
+						$(".hero-img .main, .hero-img .sub").find("img").removeClass("sliding");
+
+						carousel.removeClass("active");
+					},1000);
+
+					// $(".hero-img .main > img").attr("src",imgsrc).hide().fadeIn();
+				});
+
+				setInterval(function(){
+					let check = $(".carousel-dots > a.active");
+
+					if(check.is(":last-child")){
+						$(".carousel-dots > a:first-child").click();
+					}else{
+
+						$(".carousel-dots > a.active").next().click();
+
+					}
+
+				},5000)
+
+				$.fn.isInViewport = function() {
+				    var elementTop = $(this).offset().top;
+				    var elementBottom = elementTop + $(this).outerHeight();
+
+				    var viewportTop = $(window).scrollTop();
+				    var viewportBottom = viewportTop + $(window).height();
+
+				    return elementBottom > viewportTop && elementTop < viewportBottom;
+				};
+
+				let herotitle = $(".hero-heading");
+				let herosub = $(".sub-wrapper");
+				let heroimg = $(".hero-img");
+
+				if(herotitle.isInViewport()){
+
+					herotitle.addClass("active");
+
+				}
+
+				if(herosub.isInViewport()){
+
+					herosub.addClass("active");
+
+				}
+
+				if(heroimg.isInViewport()){
+
+					heroimg.addClass("active");
+
+				}
+
+			});
+
+		</script>
+	</body>
+</html>
