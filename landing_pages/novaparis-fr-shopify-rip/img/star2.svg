@@ -1,0 +1,21 @@
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                              
+                                <defs>
+                                  <linearGradient id="gradtemplate--18960082960650__ss_testimonial_8_EbEjij5">
+                                    <stop offset="0%" stop-color="#00b67a"></stop>
+                                    <stop offset="50%" stop-color="#00b67a"></stop>
+                                    <stop offset="50%" stop-color="#DDDDDD"></stop>
+                                    <stop offset="100%" stop-color="#DDDDDD"></stop>
+                                  </linearGradient>
+                                </defs>
+                              
+                              <rect width="32" height="32" fill="url(#gradtemplate--18960082960650__ss_testimonial_8_EbEjij5)"></rect>
+                              <g clip-path="url(#clip0_25_4)">
+                              <path d="M9.20283 27L16.001 21.807L22.7972 27L20.2018 18.596L27 13.403H18.5984L16.001 5L13.4037 13.403H5L11.7982 18.596L9.20283 27Z" fill="#ffffff"></path>
+                              </g>
+                              <defs>
+                              <clipPath id="clip0_25_4">
+                              <rect width="22" height="22" fill="#ffffff" transform="translate(5 5)"></rect>
+                              </clipPath>
+                              </defs>
+                            </svg>
