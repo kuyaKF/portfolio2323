@@ -578,6 +578,7 @@ input:focus,select:focus{
 
 .collapse-upper::after{
 	width:.5rem;
+	height:.5rem;
 	aspect-ratio: 1/1;
 	border:3px solid #000;
 	content:'';
