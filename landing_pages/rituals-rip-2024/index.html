@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Rituals Landing Page</title>
+        
+        <!-- Jquery -->
+        <script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/styles.css">
+		<!-- owl js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+		<link
+		  rel="stylesheet"
+		  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+	</head>
+	<body>
+		<div class="sticky-top">
+			<div class="pre-nav">
+				<svg class="rituals-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 37"><path fill="currentColor" d="M286.60022,0 C292.580288,0 297.342192,1.85545723 300.885935,5.45722712 L300.885935,5.45722712 L295.902547,9.82300885 C292.580288,6.65781709 289.590255,5.56637169 286.157254,5.56637169 C280.730896,5.56637169 278.6268,8.18584071 278.6268,10.3687316 C278.6268,18.3362832 301.771871,10.3687316 301.993354,25.1032448 C301.993354,32.5250738 294.352159,37 286.157254,37 C281.173864,37 275.30454,35.1445427 270.764119,30.4513275 L270.764119,30.4513275 L275.747506,25.9764013 C278.405315,28.8141593 282.170543,30.778761 286.378737,30.778761 C291.362126,30.6696166 294.905869,28.8141593 294.905869,25.4306786 C294.905869,17.5722714 271.760798,25.2123895 271.760798,10.6961652 C271.760798,4.36578172 278.405315,0 286.60022,0 Z M129.346622,0 L129.346622,19.6460177 C129.346622,26.0855457 133.444075,30.0147492 138.648948,30.0147492 C143.85382,30.0147492 147.951273,26.1946902 147.951273,19.6460177 L147.951273,19.6460177 L147.951273,0 L154.595791,0 L154.595791,21.0648967 C154.595791,29.2507376 148.283499,36.2359882 138.648948,36.2359882 C129.014396,36.2359882 122.702104,29.2507376 122.702104,21.0648967 L122.702104,21.0648967 L122.702104,0 L129.346622,0 Z M329.014395,24.7758112 C332.225913,24.7758112 334.772978,27.2861356 334.772978,30.4513275 C334.772978,33.6165193 332.225913,36.1268435 329.014395,36.1268435 C325.913621,36.1268435 323.366554,33.5073746 323.366554,30.4513275 C323.366554,27.2861356 325.913621,24.7758112 329.014395,24.7758112 Z M361.683277,24.7758112 C364.784051,24.7758112 367.331118,27.2861356 367.44186,30.4513275 C367.44186,33.6165193 364.784051,36.1268435 361.683277,36.1268435 C358.471761,36.1268435 355.924692,33.5073746 355.924692,30.4513275 C355.924692,27.2861356 358.582503,24.7758112 361.683277,24.7758112 Z M394.241415,24.7758112 C397.452936,24.7758112 400,27.2861356 400,30.4513275 C400,33.6165193 397.452936,36.1268435 394.241415,36.1268435 C391.029899,36.1268435 388.482835,33.5073746 388.482835,30.4513275 C388.482835,27.2861356 391.140641,24.7758112 394.241415,24.7758112 Z M58.6932447,0.218289085 L58.6932447,35.6902654 L52.0487265,35.6902654 L52.0487265,0.218289085 L58.6932447,0.218289085 Z M21.3732004,0 C29.4573642,0 34.330011,5.23893804 34.330011,12.2241888 C34.330011,17.1770929 31.0264503,21.1125258 26.4128568,22.753386 L25.9136213,22.920354 L34.8837209,35.5811208 L26.578073,35.5811208 L19.047619,24.3392329 L10.9634551,24.3392329 L10.9634551,35.4719765 L4.31893687,35.4719765 L4.31893687,24.3392329 L0,24.3392329 L0,18.1179941 L4.31893687,18.1179941 L4.31893687,0 L21.3732004,0 Z M104.651163,0 L104.651163,6.22123895 L94.1306751,6.22123895 L94.1306751,35.5811208 L87.486157,35.5811208 L87.486157,6.22123895 L76.9656699,6.22123895 L76.9656699,0 L104.651163,0 Z M231.229235,0 L231.229235,29.359882 L245.404208,29.359882 L245.404208,20.8466077 L252.048725,20.8466077 L252.048725,35.5811208 L224.584717,35.5811208 L224.584717,0 L231.229235,0 Z M191.58361,0 L206.866002,35.4719765 L199.667774,35.4719765 L196.899224,28.8141593 L181.616833,28.8141593 L178.848283,35.4719765 L171.760797,35.4719765 L184.82835,5.89380529 L176.633444,5.89380529 L176.633444,0 L191.58361,0 Z M189.36877,10.259587 L184.053156,22.920354 L194.573643,22.920354 L189.36877,10.259587 Z M20.9302325,6.22123895 L10.9634551,6.22123895 L10.9634551,18.1179941 L20.9302325,18.1179941 C25.6921373,18.1179941 27.7962346,15.280236 27.7962346,12.1150443 C27.7962346,8.94985251 25.6921373,6.22123895 20.9302325,6.22123895 Z"></path></svg>
+			</div>
+			<div class="topnav">
+				<div class="nav-inner">
+					
+					<div class="nav-toggle">
+						<a href="javascript:void(0);" class="toggle-js">
+							<span></span>
+						</a>
+					</div>
+					
+					<div class="nav-left">
+						<a href="javascript:void(0);">Nouveautés</a>
+						<a href="javascript:void(0);">Corps</a>
+						<a href="javascript:void(0);">Maison</a>
+						<a href="javascript:void(0);">Beauté</a>
+						<a href="javascript:void(0);">Cadeaux</a>
+						<a href="javascript:void(0);">Collections</a>
+						<a href="javascript:void(0);">Œufs de Pâques</a>
+						<a href="javascript:void(0);">Outlet</a>
+					</div>
+					<div class="nav-right">
+						
+					</div>
+					<div href="javascript:void(0);" class="nav-logo">
+						<svg role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M144 96v32H304V96c0-44.2-35.8-80-80-80s-80 35.8-80 80zm-16 48H48c-17.7 0-32 14.3-32 32V416c0 44.2 35.8 80 80 80H352c44.2 0 80-35.8 80-80V176c0-17.7-14.3-32-32-32H320v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144H144v88c0 4.4-3.6 8-8 8s-8-3.6-8-8V144zm0-16V96c0-53 43-96 96-96s96 43 96 96v32h80c26.5 0 48 21.5 48 48V416c0 53-43 96-96 96H96c-53 0-96-43-96-96V176c0-26.5 21.5-48 48-48h80z"></path></svg>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="section-fullwidth">
+			<div class="main-gallery">
+				<div class="swiper mg-js">
+					<div class="swiper-wrapper">
+						<div class="swiper-slide item"><img src="img/a1.webp" class="gallery-item"></div>
+						<div class="swiper-slide item"><img src="img/a2.webp" class="gallery-item"></div>
+					</div>
+				</div>
+				<a href="javascript:void(0);" class="gallery-btns gallery-prev"><i class="bi bi-chevron-left"></i></a>
+				<a href="javascript:void(0);" class="gallery-btns gallery-next"><i class="bi bi-chevron-right"></i></a>
+			</div>
+			<div class="main-iteminfo">
+				<div class="info-tag">Edition limitee</div>
+				<img src="img/item1.webp" class="main-thumbnail">
+
+				<div class="main-subname">THE RITUAL OF YOZAKURA</div>
+				<div class="main-itemname">Garden of Happiness Gift Set</div>
+				<div class="main-itemdesc">coffret cadeau exclusif</div>
+
+				<div class="main-itemvalue"><i>59,90</i>€</div>
+
+				<div class="main-valuedesc">
+					Valeur produit 85,00€
+				</div>
+
+				<div class="main-astrip">
+					<a href="javascript:void(0);" class="main-cta">AJOUTER AU PANIER</a>
+					<a href="javascript:void(0);">Ou bien vérifiez la disponibilité en boutique</a>
+				</div>
+
+				
+			</div>
+		</div>
+		<div class="section">
+			<div class="points-fullwidth">
+
+				<div class="point-item">
+					<div class="point-img"><img src="img/c1.svg"></div>
+					<div>Livraison offerte dès 35€ d'achat</div>
+
+				</div>
+				<div class="point-item">
+					<div class="point-img"><img src="img/c2.svg"></div>
+					<div>Click & Collect : commandez en ligne et récupérez vos produits en boutique. Plus d’infos</div>
+
+				</div>
+				<div class="point-item">
+					<div class="point-img"><img src="img/c3.svg"></div>
+					<div>Livraison sous 2 à 6 jours.</div>
+
+				</div>
+				<div class="point-item">
+					<div class="point-img"><img src="img/c4.svg"></div>
+					<div>Obtenir des conseils sur WhatsApp et Messenger</div>
+
+				</div>
+
+			</div>
+		</div>
+		<div class="section s2">
+			<div class="cw">
+				<div class="s2-row">
+					<div>
+						<div class="s-t">The Garden of Happiness est une sélection spéciale de nos 10 coups de cœur issus de la collection iconique The Ritual of Sakura et de la nouvelle Édition Limitée. Des produits pour le bain aux produits pour le corps en passant par les produits pour la maison, goûtez au bonheur des soins sur mesure avec ce splendide coffret cadeau.</div>
+					</div>
+					<div>
+						<div class="s-sh">CE QU'IL FAUT SAVOIR</div>
+						<p>Comprend trois produits grand format</p>
+						<p>Design en 3D épatant</p>
+						<p>Coffret réutilisable</p>
+					</div>
+				</div>
+
+				<a href="javascript:void(0);" class="toggle-section">DÉTAILS DU PRODUIT</a>
+				<div class="spacer"></div>
+				<div class="collapsible-section">
+					<div class="collapse-inner">
+						<div>
+							<div class="section-info">
+								<div>
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Description</a></div>
+										<div class="collapse-inner">
+											<div>
+												<p>Découvrez le coffret cadeau idéal composé d’une très belle collection de 10 articles soigneusement sélectionnés. Ce coffret cadeau en Édition Limitée qui respire la joie est aussi un très bel article décoratif. À l’intérieur, vous trouverez une sélection de nos coups de cœur et de nos nouveautés, spécialement pensés pour vous aider à profiter pleinement d’une séance bien-être.</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Contenu</a></div>
+										<div class="collapse-inner">
+											<div>
+												<ul>
+													<li>1 X The Ritual of Sakura Parfum d'Interieur 50ml</li>
+													<li>1 X The Ritual of Sakura Recovery Hand Balm</li>
+													<li>1 X Travel Rêve de Hanami 15ml for Advent</li>
+													<li>1 X The Ritual of Sakura Foaming Shower Gel 50ml</li>
+													<li>1 X The Ritual of Yozakura Foaming Shower Gel</li>
+													<li>1 X The Ritual of Sakura Body Lotion Mousse</li>
+													<li>1 X The Ritual of Yozakura Rich Body Cream 40 ml</li>
+													<li>1 X The Ritual of Yozakura Shimmering Body Oil 30ml</li>
+													<li>1 X The Ritual of Yozakura Pink Sugar Scrub 45gr</li>
+													<li>1 X The Ritual of Yozakura Scented Candle 25g</li>
+												</ul>
+											</div>
+										</div>
+									</div>
+
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Description</a></div>
+										<div class="collapse-inner">
+											<div>
+												<p><b>The Ritual of Yozakura Foaming Shower Gel</b></p>
+												<p>Aqua/Water, Sodium Laureth Sulfate, Decyl Glucoside, Butane, Glycerin, Parfum/Fragrance, Isopropyl Palmitate, Oryza Sativa (Rice) Extract, Prunus Yedoensis Leaf Extract, PEG-40 Hydrogenated Castor Oil, Hydroxyethylcellulose, Sorbitol, Citric Acid, Sodium Benzoate, Propane, Linalool, Isobutane, Benzyl Salicylate, Hexyl Cinnamal, Coumarin, Sodium Hydroxide, Butylene Glycol, Lactic Acid, Potassium Sorbate.</p>
+												<ul>
+													<li><b>The Ritual of Sakura Body Lotion Mousse</b></li>
+													<li><b>The Ritual of Yozakura Rich Body Cream</b></li>
+													<li><b>The Ritual of Sakura Home Perfume Spray</b></li>
+												</ul>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div>
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Attention</a></div>
+										<div class="collapse-inner">
+											<div>
+												<p><b>The Ritual of Yozakura Foaming Shower Gel</b></p>
+												<p>ATTENTION: Récipient sous pression: peut éclater sous l’effet de la chaleur. Éviter le contact avec les yeux. EN CAS DE CONTACT AVEC LES YEUX: rincer avec précaution à l'eau pendant plusieurs minutes. Tenir à l’écart de la chaleur, des surfaces chaudes, des étincelles, des flammes nues et de toute autre source d’inflammation. Ne pas fumer. Ne pas perforer, ni brûler, même après usage. Protéger du rayonnement solaire. Ne pas exposer à une température supérieure à 50 °C/122 °F. Tenir hors de portée des enfants. Contient 3,5 % en masse de composants inflammables.</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Envoi et retour</a></div>
+										<div class="collapse-inner">
+											<div>
+												<p>Livraison sous 2 à 6 jours.</p>
+												<p>Lisez notre FAQ pour plus d'informations sur l'expédition, les tarifs et les commandes de retour.</p>
+											</div>
+										</div>
+									</div>
+
+									<div class="collapsible-panel">
+										<div><a href="javascript:void(0);" class="collapse-heading">Éco-responsabilité et recyclage</a></div>
+										<div class="collapse-inner">
+											<div>
+												<p><b>The Ritual of Yozakura Garden of Happiness Gift Set</b></p>
+												<p>Merci de jeter le carton dans la poubelle à recycler dédiée au papier*.</p>
+												<p>*Le recyclage est soumis aux politiques et établissements locaux.</p>
+												<p><b>The Ritual of Yozakura Foaming Shower Gel</b></p>
+												<p>Triez les éléments du produit pour contribuer à nos efforts de recyclage. Merci de jeter le contenant dans la poubelle dédiée au métal ou, s’il n’y en a pas, dans la poubelle des déchets ménagers et le bouchon dans la poubelle à recycler dédiée au plastique*.</p>
+												<p>*Le recyclage est soumis aux politiques et établissements locaux.</p>
+											</div>
+										</div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+						
+						
+
+			</div>
+		</div>
+		<div class="section s3">
+			<div class="cw">
+				<div class="s-t">À offrir ou pour se faire plaisir</div>
+				<p>Nos coffrets cadeaux éco-responsables peuvent être réutilisés comme boîte de rangement élégante. Parfaits pour y ranger des photographies, des lettres ou d'autres objets. Le carton utilisé est certifié FSC, issu de forêts gérées dans le respect des normes éco-responsables et sociales.</p>
+
+
+				<img src="img/item2.webp" class="main-thumbnail">
+			</div>
+		</div>
+		<div class="section s4">
+			<div class="cw">
+				<div class="s-t">Les recommandations de nos experts</div>
+				<div class="spacer"></div>
+				<div class="collapsible-panel">
+					<div><a href="javascript:void(0);" class="collapse-heading">Qu'est-ce que The Garden of Happiness ?</a></div>
+					<div class="collapse-inner">
+						<div>
+							<p>Le Jardin du bonheur contient une sélection de 10 best-sellers du Rituel de Sakura et du Rituel de Yozakura. Faisant également office de magnifique pièce souvenir, ce coffret cadeau en édition limitée respire le bonheur. Nous vous recommandons de l'offrir à un proche ou de vous faire plaisir et d'ouvrir un nouveau cadeau quotidiennement. Enfin, vous disposerez d’une magnifique pièce maîtresse aux allures florales et d’une toute nouvelle routine de soins personnels.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="collapsible-panel">
+					<div><a href="javascript:void(0);" class="collapse-heading">The Garden of Happiness peut-il être emballé dans un emballage cadeau ?</a></div>
+					<div class="collapse-inner">
+						<div>
+							<p>Le Jardin du Bonheur est présenté sous forme de coffret cadeau de luxe afin que vous puissiez le présenter tel quel à vos proches ou vous faire plaisir avec cette belle sélection de best-sellers. Il n'est pas possible d'ajouter un emballage cadeau supplémentaire au Jardin du Bonheur.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="collapsible-panel">
+					<div><a href="javascript:void(0);" class="collapse-heading">The Garden of Happiness sera-t-il livré avec les autres produits que j'ai commandés ?</a></div>
+					<div class="collapse-inner">
+						<div>
+							<p>Notre priorité est de vous livrer votre magnifique Jardin du Bonheur en bon état, nous pouvons donc l'envoyer dans une boîte de commande séparée. Si vous avez commandé plus de deux de ces coffrets cadeaux ou acheté d'autres articles, nous pouvons envoyer votre commande en plusieurs parties, pour lesquelles vous recevrez également plusieurs codes de suivi et de traçabilité.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="collapsible-panel">
+					<div><a href="javascript:void(0);" class="collapse-heading">Comment aménager mon  Garden of Happiness ?</a></div>
+					<div class="collapse-inner">
+						<div>
+							<p>A l'intérieur de la boîte, vous découvrirez deux supports. Pour commencer, prenez le support rose, et aplatissez ses séparateurs. Placez soigneusement ce support rose dans la boîte avec les chiffres vers le haut. Ensuite, positionnez le support violet sur le dessus pour créer les emplacements pour les boîtes. Pour finir, utilisez les numéros de la boîte pour trouver leur bon emplacement et assurez-vous que les points sur les côtés s'alignent parfaitement avec les points correspondants sur le support rose. Votre magnifique centre de table est terminé !</p>
+						</div>
+					</div>
+				</div>
+
+
+			</div>
+		</div>
+		<div class="section footer">
+			<div class="cw">
+				<div class="footer-row">
+					<div>
+						<div class="s-sh">CONTACT</div>
+						<div class="footer-links">
+							<a href="javascript:void(0);">Retours & Échanges</a>
+							<a href="javascript:void(0);">FAQ</a>
+							<a href="javascript:void(0);">Contactez-nous</a>
+							<a href="javascript:void(0);">Politique en matières de cookies</a>
+							<a href="javascript:void(0);">Les paramètres de cookies</a>
+							<a href="javascript:void(0);">Politique de Confidentialité de Rituals</a>
+							<a href="javascript:void(0);">Règles Internes de Rituals</a>
+						</div>
+					</div>
+					<div>
+						<div class="s-sh">CONTACTEZ-NOUS:</div>
+							<p>
+								Tarif local
+								<br/>+33 (0)1 82 88 65 52
+								
+							</p>
+
+							<p>
+								Lundi - Vendredi
+								<br/>09h00 - 21h00
+							</p>
+
+							<p>
+								Samedi - Dimanche
+								<br/>10h00 - 18h30
+							</p>
+					</div>
+					<div class="footer-logos">
+						<div><img src="img/rituals-logo-footer.svg"></div>
+						<div><img src="img/certi.svg"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="post-footer">
+				<div><img src="img/logo-visa.webp"></div>
+				<div><img src="img/logo-mastercard.webp"></div>
+		</div>
+		<script>
+			$(function() {
+
+
+				var gallerylist = new Swiper('.mg-js', {
+				  // Optional parameters
+				  direction: 'horizontal',
+				  loop: true,
+				  spaceBetween: 0,
+				  slidesPerView: 1,
+				  mousewheel:false,
+				  navigation: {
+				    nextEl: '.gallery-next',
+				    prevEl: '.gallery-prev',
+				  },
+
+				});
+
+				$(document).on("click",'.toggle-section',function(){
+					$(".collapsible-section").toggleClass("active");
+				});
+
+				$(document).on("click",'.collapse-heading',function(){
+					$(this).closest(".collapsible-panel").toggleClass("active");
+				});
+
+				$(document).on("click",".nav-popover",function(e){
+
+					$(".nav-popover").not(this).removeClass("active");
+					if(!$(e.target).parent().hasClass("popover")){
+
+						$(this).toggleClass("active");
+
+					}
+
+				});
+
+				$(document).on("click",".toggle-js",function(){
+
+					$(this).closest('.nav-inner').toggleClass("active");
+
+				});
+
+				$(document).on("mouseup",function(e){
+					if ($(e.target).closest(".nav-popover").length === 0) {
+
+						$(".nav-popover").removeClass("active");
+					}
+				});
+
+				var lastScrollTop = 0;
+
+				$(window).scroll(function(event){
+		        var currentScroll = $(this).scrollTop();
+		        var tbH = $(".sticky-top").outerHeight() + 1;
+		        if (currentScroll > lastScrollTop){
+		            // Downscroll code
+
+		        	$(".sticky-top").attr("style","top:-"+tbH+"px");
+
+		        } else {
+		            // Upscroll code
+		        	$(".sticky-top").attr("style","top:-0px");
+		            
+		        }
+		        lastScrollTop = currentScroll;
+
+		    });
+
+
+
+			});
+		</script>
+	</body>
+</html>
