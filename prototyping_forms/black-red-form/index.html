@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+        
+        <!-- Jquery -->
+        <script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/styles.css">
+		<!-- owl js -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha512-tS3S5qG0BlhnQROyJXvNjeEM4UpMXHrQfTGmbQ1gKmelCxlSEBUaxhRBj/EFTzpbP4RVSrpEikbmdJobCvhE3g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+	</head>
+	<body>
+		<div class="section main">
+			<div class="cw">
+
+
+
+				<div class="secure-info"><img src="img/shield.png"> Veillige en versleutelde 256-bits TLS-verificatie</div>
+
+				<div class="form-panel">
+					<div class="panel-side">
+
+						<img src="img/side.png">
+						
+					</div>
+					<div class="panel-inner">
+
+						<span class="head-value">€0</span>
+
+						<h1 class="panel-h">Activering van je account</h1>
+						<p>Er WORDEN GEEN KOSTEN in rekening gebracht voor het activeren van je account.</p>
+						<p>Onbeperkte toegang tot je inhoud met een snelle verbinding.</p>
+						<br/><br/>
+						
+
+						<!-- <div class="panel-divider"></div> -->
+
+						<form>
+
+							<div class="cc-form-label">E-mailadres</div>
+							<input type="text" placeholder="Voer je e-mailadres in">
+
+
+							<div class="cc-form-label">Volledige naam</div>
+							<input type="text" placeholder="Voer je volledige naam in die op de kaart staat">
+							<!-- <div class="form-inline">
+								
+								<input type="text" placeholder="Voornaam">
+								<input type="text" placeholder="Achternaam">
+							</div> -->
+
+							<div class="cc-form-label">Creditcardnummer</div>
+							<div class="cc-input">
+								<input type="text" placeholder="Geldige creditcard invoeren">
+							</div>
+
+							<div class="form-inline cc-info">
+								
+								<div class="cc-form-label">Vervalmaand</div>
+								<input type="text" placeholder="MM">
+								<div class="cc-form-label">Vervaljaar</div>
+								<input type="text" placeholder="YYYY">
+								<div class="cc-form-label">Beveiligingscode</div>
+								<input type="text" placeholder="3-4 cijfers">
+							</div>
+
+
+							<p class="form-terms">Door op doorgaan te klikken ga je akkoord met de <a href="javascript:void(0);">voorwaarden</a>, het <a href="javascript:void(0);">privacybeleid</a> en eventuele onderstaande kosten.</p>
+
+							<a href="javascript:void(0);" class="btn-s c1 c1-darken form-btn fw">Doorgaan</a>
+						</form>
+					</div>
+				</div>
+
+				
+				
+			</div>
+		</div>
+		<script>
+			$(function(){
+				$(document).on("change","form input",function(){
+					
+					if($(this).val()){
+						$(this).addClass("has-input");
+					}else{
+						$(this).removeClass("has-input");
+					}
+				});
+			});
+		</script>
+	</body>
+</html>
