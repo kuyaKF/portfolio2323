@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+
+        <!-- Jquery -->
+        <script src="js/jquery-3.6.1.min.js"></script>
+
+        <!-- Swiper CSS -->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+		<!-- Swiper JS -->
+		<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/styles.css">
+
+	</head>
+	<body class="page2">
+		<div class="topbar">
+			<div class="cw">
+				<img src="img/logo.png" class="top-logo">
+			</div>
+		</div>
+		<div class="section form-section">
+			<div class="cw">
+				<div class="s-t">Vul uw gegevens in</div>
+
+				<p>Om u een gericht aanbod te kunnen doen, hebben we uw huidige leverancier en verbruik nodig.</p>
+
+				<div class="form-cw">
+					<div>
+						<div class="white-panel">
+							<div class="form-input">
+								<div class="form-label">Uw huidige leverancier</div>
+								<div class="combobox"><select class="required-select">
+									<option value="" disabled selected hidden>Essent</option>
+									<option>Vattenfall </option>
+									<option>Eneco</option>
+									<option>Greenchoice</option>
+									<option>Budget Energie</option>
+									<option>ENGIE</option>
+									<option>Oxxio</option>
+									<option>Vrijopnaam</option>
+									<option>Mega Energie</option>
+									<option>UnitedConsumers Energie</option>
+									<option>Pure Energie</option>
+									<option>Powerpeers</option>
+									<option>Vandebron</option>
+									<option>Delta Energie</option>
+									<option>Octopus Energy</option>
+
+								</select></div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+							</div>
+
+							<div class="form-input date-with-radio">
+								<div class="form-label">Einddatum contract</div>
+								<input type="date">
+								<label class="checkbox-option">
+								  <input type="checkbox" name="chk1">
+								  <span class="checkbox-custom"></span>
+								  Onbekend
+								</label>
+							</div>
+
+						</div>
+						<div class="white-panel">
+
+							<div class="form-label">Woning type</div>
+
+							<div class="grid-button-group">
+								<label>
+									<input type="radio" name="r1" checked>
+									<img src="img/btn-grp1.png">
+									Vrijstaande woning
+								</label>
+								<label>
+									<input type="radio" name="r1">
+									<img src="img/btn-grp2.png">
+									Halfvrijstaande woning
+								</label>
+								<label>
+									<input type="radio" name="r1">
+									<img src="img/btn-grp3.png">
+									Rijtjeshuis
+								</label>
+								<label>
+									<input type="radio" name="r1">
+									<img src="img/btn-grp4.png">
+									Hoekhuis
+								</label>
+								<label>
+									<input type="radio" name="r1">
+									<img src="img/btn-grp5.png">
+									Appartement
+								</label>
+
+							</div>
+
+						</div>
+
+						<div class="white-panel">
+
+							<div class="form-label">Gezinssituatie</div>
+
+							<div class="grid-button-group">
+								<label>
+									<input type="radio" name="r2" checked>
+									<img src="img/g1.png">
+									Alleenstaand persoon
+								</label>
+								<label>
+									<input type="radio" name="r2">
+									<img src="img/g2.png">
+									Samenwonend
+								</label>
+								<label>
+									<input type="radio" name="r2">
+									<img src="img/g3.png">
+									Gezin met kinderen
+								</label>
+
+							</div>
+
+						</div>
+
+
+					<a href="page3.html" class="panel-btn btn-s js-next disabled">Doorgaan</a>
+					</div>
+					<div>
+						<div class="colored-panel expert-panel" style="--bg:var(--c2-satebg">
+							<img src="img/user1.jpg" class="expert-dp">
+							<div class="s-sh expert-name">Bas de Jonghe</div>
+							<div class="user-title">Energie-expert</div>
+
+							<p>Op basis van uw daadwerkelijke verbruik kunnen we uw nieuwe maandbedrag beter inschatten. Na uw overstap berekenen wij bij Essent uw exacte maandbedrag. 						</p>
+						</div>
+						<div class="colored-panel" style="--bg:var(--c2-satebg);">
+							<div class="s-sh">Wij helpen u graag de juiste keuze te maken:</div>
+							<div class="info-grid collapse">
+
+								<div>
+									<i class="bi bi-check-circle"></i>
+									Betrouwbaar, onafhankelijk advies waarop u kunt vertrouwen
+								</div>
+								<div>
+									<i class="bi bi-check-circle"></i>
+									Volledig aanbod van opties
+								</div>
+								<div>
+									<i class="bi bi-check-circle"></i>
+									Eenvoudig overstappen in slechts een paar stappen
+								</div>
+								<div>
+									<i class="bi bi-check-circle"></i>
+									Duidelijk en eenvoudig aanbod overzicht
+								</div>
+								<div>
+									<i class="bi bi-check-circle"></i>
+									Beoordeeld met een 8,4 door Nederlandse consumenten
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script>
+			$(function(){
+
+				$(document).on("change",".required-select",function(){
+					$(".js-next").removeClass("disabled");
+				});
+			});
+		</script>
+	</body>
+</html>
