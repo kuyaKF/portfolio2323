@@ -1000,6 +1000,10 @@ body,html{
 	.main-img .circle{
 		font-size:2em;
 	}
+
+	.panel-c1{
+		transform:translateY(0%);
+	}
 }
 
 @media(max-width:660px){
@@ -1008,7 +1012,8 @@ body,html{
 		padding-inline:1.25em;
 	}
 
-	.grid-row{
+	.grid-row,
+	.panel-c1{
 		grid-template-columns: 1fr !important;
 		gap:1em !important;
 	}
