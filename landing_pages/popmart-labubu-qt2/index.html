@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Page Title</title>
+        
+        <!-- Jquery -->
+        <script src="js/jquery-3.6.1.min.js"></script>
+		<!-- Normalize CSS -->
+		<link rel="stylesheet" href="css/normalize.min.css">
+		<!-- Custom CSS -->
+		<link rel="stylesheet" href="css/styles.css">
+
+		<!-- Color thief -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/color-thief/2.3.2/color-thief.umd.js"></script>
+
+	</head>
+	<body class="style2">
+		<div class="topbar">
+			<div class="cw">
+				<img class="tb-logo" src="img/logo.png">
+				<a class="tb-cta" href="javascript:void(0);">Exclusive rewards — Limited time!</a>
+			</div>
+			
+		</div>
+		<main>
+			<div class="cw">
+				<div class="r-list">
+					<div>
+						<div class="main-upper">
+							<div class="main-sh">Independent Survey about</div>
+							<div class="main-h" style="letter-spacing: -.05em;">Pop Mart's <span style="display:inline-block">Labubu Dolls</span></div>
+
+							<div class="main-date-display">
+								<img class="flagDisplay" src=""> <span class="dateDisplay"></span>
+							</div>
+						</div>
+						<div class="main-grid">
+							<div class="main-letter">
+								<div class="letter-wrapper">
+									
+									<!-- <div class="letter-salutation">Dear Walmart shopper,</div> -->
+
+									<div class="letter-heading">CONGRATULATIONS!</div>
+									<p>You've been chosen for the chance to receive</p>
+									<div class="letter-heading" style="letter-spacing: -.05em;">Pop Mart The Monsters Labubu Big into Energy (6 Blind Boxes) $278.20</div>
+									<p>For your chance to claim the blind bags, simply answer a few quick questions regarding Pop Mart.</p>
+
+									<div class="letter-expiry-emp"><i class="bi bi-clock"></i> Attention: This survey offer <span style="color:#ff0000">expires today</span>, <span class="dateDisplay" style="display:inline-block"></span></div>
+
+									<a class="btn-s main-btn r-next" href="javascript:void(0);">START SURVEY</a>
+								</div>
+							</div>
+							<div class="item-img-display item-4-3">
+								<img src="img/side.webp">
+							</div>
+						</div> 
+					</div>
+					<div>
+						<div class="lightbg-panel questionnaire-panel">
+							<div class="questionnaire-progress active">
+				                <div><span class="q-current">1</span>/<span class="q-total">3</span></div>
+				            </div>
+				            <div class="panel-wrapper">
+					            <div class="q-list">
+									<div>
+									    <div class="q-label">Question</div>
+									    <div class="q-text">How often do you buy Pop Mart's Labubu Dolls?</div>
+									    <div class="answer-list">
+									        <a href="javascript:void(0);">Every time a new series is released</a>
+									        <a href="javascript:void(0);">A few times a year when I find designs I like</a>
+									        <a href="javascript:void(0);">Only for special collections or collaborations</a>
+									        <a href="javascript:void(0);">Haven't bought one yet, but interested</a>
+									    </div>
+									</div>
+
+									<div>
+									    <div class="q-label">Question</div>
+									    <div class="q-text">Where do you usually purchase Labubu Dolls?</div>
+									    <div class="answer-list">
+									        <a href="javascript:void(0);">Official Pop Mart stores or website</a>
+									        <a href="javascript:void(0);">Online marketplaces (e.g., Shopee, Lazada, eBay)</a>
+									        <a href="javascript:void(0);">Pop-up events or conventions</a>
+									        <a href="javascript:void(0);">Gift from friends or family</a>
+									    </div>
+									</div>
+
+									<div>
+									    <div class="q-label">Question</div>
+									    <div class="q-text">Which factor is most important when choosing a Labubu Doll?</div>
+									    <div class="answer-list">
+									        <a href="javascript:void(0);">Character design & theme</a>
+									        <a href="javascript:void(0);">Rarity & exclusivity</a>
+									        <a href="javascript:void(0);">Price</a>
+									        <a href="javascript:void(0);">Packaging & display value</a>
+									    </div>
+									</div>
+
+									<div>
+									    <div class="q-label">Question</div>
+									    <div class="q-text">How do you usually display your Labubu Dolls?</div>
+									    <div class="answer-list">
+									        <a href="javascript:void(0);">In a display case or shelf</a>
+									        <a href="javascript:void(0);">Unboxed and part of room décor</a>
+									        <a href="javascript:void(0);">Stored in original packaging</a>
+									        <a href="javascript:void(0);">I don’t currently display them</a>
+									    </div>
+									</div>
+
+					            </div>
+					        </div>
+						</div>
+					</div>
+					<div>
+						<div class="lightbg-panel verification-panel">
+							<div class="panel-wrapper">
+								<div class="progress-label"><span id="counter">0%</span> Completed</div>
+								<div class="panel-h verification-h">Please wait while we analyze your responses</div>
+								<div class="verification-progress"></div>
+
+								<div class="verification-steps">
+									<div>
+										<div class="verification-circle">
+											<svg class="verification-outline" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+											<svg class="verification-stroke" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+										</div>
+										<div class="verification-label">Verfication in Progress...</div>
+									</div>
+									<div>
+										<div class="verification-circle">
+											<svg class="verification-outline" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+											<svg class="verification-stroke" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+										</div>
+										<div class="verification-label">Just a moment, we're getting this ready...</div>
+									</div>
+									<div>
+										<div class="verification-circle">
+											<svg class="verification-outline" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+											<svg class="verification-stroke" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+										</div>
+										<div class="verification-label">Participation closed...</div>
+									</div>
+									<div>
+										<div class="verification-circle">
+											<svg class="verification-outline" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+											<svg class="verification-stroke" viewBox="0 0 800 800" xmlns="http://www.w3.org/2000/svg">
+											  <circle cx="400" cy="400" fill="none"
+											    r="360" stroke-width="60"  />
+											</svg>
+										</div>
+										<div class="verification-label">Preparing your exclusive offers...</div>
+									</div>
+								</div>
+
+								<div class="congratulations-panel">
+									<div class="panel-h">Congratulations!</div>
+									<p>You are a winner of <b>Pop Mart The Monsters Labubu Big into Energy (6 Blind Boxes)</b></p>
+
+									<a href="javascript:void(0);" class="btn-s btn-2 r-next">Next</a>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<div>
+						<div class="main-upper">
+							<div class="main-sh">Independent Survey about</div>
+							<div class="main-h" style="letter-spacing: -.05em;">Pop Mart's <span style="display:inline-block">Labubu Dolls</span></div>
+
+							<div class="main-date-display">
+								<img class="flagDisplay" src=""> <span class="dateDisplay"></span>
+							</div>
+						</div>
+						<div class="main-grid">
+							<div class="main-letter alt">
+								<div class="letter-wrapper">
+
+									<div class="letter-heading">Thank you for your participation!</div>
+									<p>Your prize is being prepared for shipment. Pop Mart thanks you for your valuable feedback and continued support.</p>
+
+									<div class="grid-info">
+									    <div style="grid-row:span 4">
+									        <b>Box contents:</b><br/>
+									        Pop Mart The Monsters: Labubu “Big into Energy” – Set of 6 Blind Boxes<br/><br/>
+									        Chance to find 1 ultra-rare Secret (Chase) figure<br/><br/>
+									        Each blind box reveals 1 random Labubu character design<br/><br/>
+									        Factory-sealed for a true surprise unboxing experience<br/><br/>
+									        Includes official collector’s checklist for tracking your collection<br/><br/>
+									        Guaranteed authentic with Pop Mart’s official quality seal
+									    </div>
+
+									    <div>
+									        <b>Package name:</b><br/>
+									        Pop Mart The Monsters: Labubu “Big into Energy” – 6 Blind Box Set
+									    </div>
+									    <div>
+									        <b>Perfect for:</b><br/>
+									        Dedicated collectors, mystery box enthusiasts, and Labubu fans
+									    </div>
+									    <div>
+									        <b>Shipping:</b><br/>
+									        Free worldwide shipping – delivered within 7 days
+									    </div>
+
+									    <div>
+									        <b>Estimated value:</b><br/>
+									        Price: $278.20
+									    </div>
+									</div>
+
+									<a class="btn-s main-btn main-cta-btn" href="javascript:void(0);">CLAIM NOW</a>
+								</div>
+							</div>
+							<div class="item-img-display item-4-3">
+								<img src="img/side.webp">
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="main-disclaimer">
+					<p>This site is not affiliated with or endorsed by Walmart, and does not claim any rights to any trademarks mentioned. Participation is voluntary and does not guarantee any winnings. Offers may be subject to additional terms and conditions available on partner sites.</p>
+				</div>
+			</div>
+		</main>
+
+		<footer>
+		    <div class="cw">
+		        <img src="img/imgcs1.png" class="footer-trust"> <img src="img/imgcs2.png" class="footer-trust">
+		        <p>Copyright © 2025</p>
+		        <p>This site is not affiliated with or endorsed by Walmart, and does not claim any rights to any trademarks mentioned. Participation is voluntary and does not guarantee any winnings. Offers may be subject to additional terms and conditions available on partner sites.</p>
+		        <p>No purchase necessary to participate. Read our <a href="javascript:void(0);">Privacy Policy</a> and <a href="javascript:void(0);">Terms and Conditions</a> for more information.</p>
+		    </div>
+		</footer>
+		<script>
+			$(function(){
+
+				// User-defined country code (ISO 3166-1 alpha-2)
+				let geo = "US"; // e.g., "US", "PH", "FR", "JP"
+
+				// Map country code to locale
+				const localeMap = {
+				    US: "en-US",
+				    GB: "en-GB",
+				    PH: "en-PH",
+				    FR: "fr-FR",
+				    DE: "de-DE",
+				    JP: "ja-JP",
+				    ES: "es-ES",
+				    IT: "it-IT",
+				    NL: "nl-NL"
+				};
+
+				// Determine locale based on geo, fallback to en-US
+				const locale = localeMap[geo] || "en-US";
+
+				// --- 1. Display date in user's locale ---
+				const today = new Date();
+				const options = { month: 'long', day: 'numeric', year: 'numeric' };
+				$(".dateDisplay").text(today.toLocaleDateString(locale, options));
+
+				// --- 2. Display flag ---
+				function setFlag(countryCode) {
+				    const flagUrl = `https://flagcdn.com/${countryCode.toLowerCase()}.svg`;
+				    $(".flagDisplay").attr("src", flagUrl);
+				}
+
+				setFlag(geo);
+
+
+				let i = 0;
+				$(".q-label").each(function(){
+					i++;
+					let text = $(this).text();
+					$(this).text(text+" "+i+":");
+				});
+
+				let qtotal = $(".q-list > div").length;
+				let qinterval = Math.round(100/qtotal);
+
+				$(".q-total").text(qtotal);
+				$(".questionnaire-progress").css("--progress",qinterval+"%");
+
+				var dots;
+
+				function dotsAnimation(){
+					let i = 1;
+					dots = setInterval(function(){
+						$(".verification-panel .verification-h").append("<span>.</span>");
+						if(i>3){
+							$(".verification-panel .verification-h span").remove();
+							i=0;
+						}
+						i++;
+					},300)
+				}
+
+				function verificationFill(){
+
+					let max = $(".verification-steps > div").length;
+					let counter = 0;
+					let stepFill = setInterval(function(){
+						counter++;
+						$(".verification-steps > div:not(.fill)").first().addClass("fill");
+
+						
+						
+						if(counter == max){
+							clearInterval(stepFill);
+							setTimeout(function(){
+								$(".verification-progress").addClass("success");
+								clearInterval(dots);
+
+								$(".verification-h").text("Verification complete, Thank you for your patience!");
+
+								$(".congratulations-panel").show().addClass("fadeDown");
+							},1000)
+						}
+
+					},500);
+					
+				}
+
+				function startPercentageCounter(durationInSeconds, onUpdate, delayInSeconds = 0) {
+				    const totalDuration = durationInSeconds * 1000;
+				    const delayDuration = delayInSeconds * 1000;
+
+				    setTimeout(() => {
+				        const startTime = performance.now();
+
+				        function update(currentTime) {
+				            const elapsed = currentTime - startTime;
+				            const progress = Math.min(elapsed / totalDuration, 1);
+				            const percentage = Math.floor(progress * 100);
+
+				            onUpdate(percentage);
+
+				            if (progress < 1) {
+				                requestAnimationFrame(update);
+				            }
+				        }
+
+				        requestAnimationFrame(update);
+				    }, delayDuration);
+				}
+
+				function rNext(){
+					$(".r-list > div:visible").first().hide().next().fadeIn();
+				}
+
+
+
+				
+
+				$(document).on("click",".answer-list > a",function(){
+
+					if($(".q-list > div:visible").first().is(":last-child")){
+
+						rNext();
+						verificationFill();
+						dotsAnimation();
+						startPercentageCounter(2.5, function(percent) {
+						    console.log(percent + '%');
+						    document.getElementById('counter').textContent = percent + '%';
+						}, .5); // Starts after 2 seconds, counts to 100% in 5 seconds
+
+					}else{
+
+						$(".q-list > div:visible").first().hide().next().fadeIn();
+						let qcurrent = $(".q-list > div:visible").index() + 1;
+						let qprogress = qcurrent * qinterval;
+
+						$(".q-current").text(qcurrent);
+
+						if(qcurrent == qtotal){
+							qprogress = 100;
+						}
+
+						$(".questionnaire-progress").css("--progress", qprogress+"%");
+					}
+					
+				});
+
+				$(document).on("click",".r-next",function(){
+
+					rNext();
+				});
+			});
+		</script>
+	</body>
+		
+</html>
