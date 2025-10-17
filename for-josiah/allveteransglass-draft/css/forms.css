@@ -1,0 +1,230 @@
+
+.form-wrapper{
+	--gap: .75em;
+	--trim: #ccc;
+	display: grid;
+	grid-template-columns: repeat(var(--formcol), minmax(0,1fr));
+	gap: var(--gap);
+/*	padding: var(--gap);*/
+}
+
+.form-wrapper > *:not(.form-checkbox){
+	--paddinginline: 12px;
+	--height: 3em;
+	height: var(--height);
+}
+
+.form-wrapper > *:not(.form-inline),
+.form-wrapper > button.form-btn{
+	grid-column: span var(--formcol);
+	max-width:100% !important;
+}
+
+.form-wrapper input[type='text'],
+.form-wrapper button,
+.form-wrapper select{
+	border: 1px solid var(--trim);
+	outline: none;
+	padding: 0 var(--paddinginline);
+	transition: .3s;
+}
+
+.form-wrapper select{
+	appearance:none;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+}
+
+.form-wrapper select > option:first-child{
+	display: none;
+}
+
+.form-wrapper button.form-btn{
+	cursor: pointer;
+	border:none;
+}
+
+.form-inline{
+	grid-column: span var(--colspan);
+}
+
+.form-wrapper input[type='text']:focus,
+.form-checkbox span:hover{
+	--border: 200;
+	border:1px solid hsl(var(--border), 60%, 60%);
+	box-shadow: 0 0 .15em .05em hsla(var(--border), 60%, 60%, .25);
+}
+
+.form-input{
+	position: relative;
+	isolation: isolate;
+}
+
+.form-input input[type='text'],
+.form-input select{
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+}
+
+.form-input:has(select):after{
+	content: '';
+	position: absolute;
+	top: calc(50% - .25em);
+	transform: translateY(-50%) rotate(45deg);
+	aspect-ratio: 1/1;
+	width: .5em;
+	right: 1em;
+	pointer-events: none;
+	border-bottom: .25em solid var(--trim);
+	border-right: .25em solid var(--trim);
+	transition: .1s;
+}
+
+.form-input:has(select:focus):after{
+	top: 50%;
+}
+
+.form-label{
+	position: absolute;
+	inset: 0;
+	z-index: 1;
+	padding-inline: var(--paddinginline);
+	pointer-events: none;
+	display: flex;
+	padding-top: calc(var(--height)/3);
+	color: #aaa;
+	transition: .3s;
+	font-weight: 300;
+}
+
+.form-input.active .form-label,
+.form-input input[type='text']:focus + .form-label,
+.form-input select:focus + .form-label{
+	padding-top: .25em;
+	font-size: .7em;
+	padding-inline:  calc(var(--paddinginline) + 1px);
+	font-weight: 500;
+}
+
+.form-checkbox input{
+	display: none;
+}
+
+.form-checkbox > label{
+	display: inline-block;
+	padding-left: 1.5em;
+	cursor: pointer;
+	font-weight: 300;
+	line-height: 1.4em;
+	font-size: .9em;
+}
+
+.form-checkbox input + span{
+	width: 1em;
+	position: absolute;
+	top: .1em;
+	left: 0;
+	aspect-ratio: 1/1;
+	border: 1px solid var(--trim);
+	background: #fff;
+}
+
+.form-checkbox span{
+	transition: .3s;
+	position: relative;
+	isolation: isolate;
+}
+
+.form-checkbox span:before{
+	content: '';
+	width: 100%;
+	position: absolute;
+	aspect-ratio: 16/7;
+	transition: .3s;
+	border-left: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+	transform: rotate(-50deg) translate(.1em, -.1em);
+	
+}
+
+.form-checkbox input:checked + span:before{
+	border-color: var(--rgb);
+}
+
+.form-input.form-option,
+.form-input.form-combo{
+	display:grid;
+	gap:var(--gap);
+	grid-auto-columns: minmax(0,1fr);
+	grid-auto-flow: column;
+}
+
+.form-input.form-option > label{
+	position:relative;
+	cursor:pointer;
+}
+
+.form-option input[type="radio"],
+.form-option input[type="checkbox"]{
+	display:none;
+}
+
+.form-option span{
+
+	color: #aaa;
+	font-weight:300;
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	position:relative;
+	isolation:isolate;
+	position: absolute;
+	inset:0;
+	background:#fff;
+	border:1px solid var(--trim);
+	z-index:-1;
+}
+
+.form-option input:checked + span{
+	background:var(--rgb);
+	border-color:var(--maindarker);
+	color:#fff;
+}
+
+.form-divider{
+	height:1px !important;
+	background:var(--trim);
+}
+
+.combo-label{
+	height:calc(var(--height)*.25) !important;
+	color:#666;
+	font-weight:700;
+}
+
+@media(max-width: 767px){
+	.form-inline{
+		grid-column: span calc(var(--colspan)*2);
+	}
+}
+
+@media(max-width: 480px){
+	.form-inline{
+		grid-column: span var(--formcol) !important;
+	}
+
+	.form-combo.combo-resp{
+		grid-auto-columns: initial;
+		grid-auto-flow: initial;
+		grid-template-columns: 1fr !important;
+	}
+
+	.combo-resp{
+		height:auto !important;
+	}
+
+	.combo-resp > .form-input{
+		height:var(--height);
+	}
+}
