@@ -84,7 +84,8 @@
 							</div>
 							<div class="q-list">
 								<div>
-									<div class="q-text">Select your property type*</div>
+									<div class="q-text">Select your property type</div>
+									<input type="hidden" class="q-hidden" name="property_type" value="">
 									<div class="answer-grid">
 										<a class="btn-s btn-wht" href="javascript:void(0);">Detached House </a>
 										<a class="btn-s btn-wht" href="javascript:void(0);">Condo</a>
@@ -94,6 +95,7 @@
 								</div>
 								<div>
 									<div class="q-text">Select the amount of shade on your roof</div>
+									<input type="hidden" class="q-hidden" name="roof_shade" value="">
 									<div class="answer-grid">
 										<a class="btn-s btn-wht" href="javascript:void(0);">No Shade </a>
 										<a class="btn-s btn-wht" href="javascript:void(0);">A Little Shade</a>
@@ -102,7 +104,18 @@
 									</div>
 								</div>
 								<div>
+									<div class="q-text">Select your roof type</div>
+									<input type="hidden" class="q-hidden" name="roof_type" value="">
+									<div class="answer-grid">
+										<a class="btn-s btn-wht" href="javascript:void(0);">Gabled Roof</a>
+										<a class="btn-s btn-wht" href="javascript:void(0);">Shed</a>
+										<a class="btn-s btn-wht" href="javascript:void(0);">Flat</a>
+										<a class="btn-s btn-wht" href="javascript:void(0);">Hip Roof</a>
+									</div>
+								</div>
+								<div>
 									<div class="q-text">Select your ownership status of your home</div>
+									<input type="hidden" class="q-hidden" name="ownership_status" value="">
 									<div class="answer-grid">
 										<a class="btn-s btn-wht" href="javascript:void(0);">Owner </a>
 										<a class="btn-s btn-wht" href="javascript:void(0);">Tenant</a>
@@ -110,6 +123,7 @@
 								</div>
 								<div>
 									<div class="q-text">Estimate your monthly electric bill</div>
+									<input type="hidden" class="q-hidden" name="monthly_bill" value="">
 									<div class="answer-grid">
 										<a class="btn-s btn-wht" href="javascript:void(0);">$50-$100 </a>
 										<a class="btn-s btn-wht" href="javascript:void(0);">$100-$400</a>
@@ -119,22 +133,25 @@
 								</div>
 								<div>
 									<div class="q-text">Please enter your current electric provider</div>
-									<input class="q-textbox" type="text" Placeholder="Electricity provider">
+									<input class="q-textbox" type="text" name="electricityProvider" Placeholder="Electricity provider">
+									<div class="q-step-error"></div>
 								</div>
 								<div>
 									<div class="q-text">Please enter your name and birthday</div>
-									<input class="q-textbox" type="text" Placeholder="First Name">
-									<input class="q-textbox" type="text" Placeholder="Last Name">
-									<input class="q-textbox" type="text" Placeholder="MM/DD/YYYY">
+									<input class="q-textbox" type="text" name="firstName" Placeholder="First Name">
+									<input class="q-textbox" type="text" name="lastName" Placeholder="Last Name">
+									<!-- <input class="q-textbox" type="text" Placeholder="MM/DD/YYYY"> -->
+									<div class="q-step-error"></div>
 								</div>
 								<div>
 									<div class="q-text">Please enter your house number, street, and city</div>
-									<input class="q-textbox" type="text" Placeholder="123 Sun Street">
-									<input class="q-textbox" type="text" Placeholder="City">
+									<input class="q-textbox" type="text" name="streetAddress" Placeholder="123 Sun Street">
+									<input class="q-textbox" type="text" name="city" Placeholder="City">
+									<div class="q-step-error"></div>
 								</div>
 								<div>
 									<div class="q-text">Please enter your zip code and state</div>
-									<input class="q-textbox" type="text" Placeholder="90000">
+									<input class="q-textbox" type="text" name="postalCode" Placeholder="90000">
 									<select class="q-textbox" id="states" name="state">
                                     <option value="" disabled="" selected="" style="display:none;">State</option>
                                     <option value="AL">AL</option>
@@ -189,17 +206,20 @@
 									<option value="WI">WI</option>
 									<option value="WY">WY</option>
                                   </select>
+								<div class="q-step-error"></div>
 								</div>
 								<div>
 									<div class="q-text">Please enter your email and phone number</div>
-									<input class="q-textbox" type="text" Placeholder="Email">
-									<input class="q-textbox" type="text" Placeholder="123 456 7890">
+									<input class="q-textbox" type="text" name="email" Placeholder="Email">
+									<input class="q-textbox" type="text" name="phoneNumber" Placeholder="123 456 7890">
+									<div class="q-step-error"></div>
 									<div class="p smol terms">By clicking below, you authorize Striveagle and up to four Solar Companies to call you and send you pre-recorded messages and text messages at the number you entered above, using an autodialer, with offers about their products or services, even if your phone number is on any national or state "Do Not Call" list. Message and data rates may apply. You also agree to Striveagle's Privacy Policy and Terms of Use. Your consent here is not based on a condition of purchase.</div>
 								</div>
 							</div>
 							<div class="q-astrip">
 								<a href="javascript:void(0);" class="btn-s c1 c1-darken q-next">Next</a>
 							</div>
+							<div class="q-submit-msg" style="display:none;"></div>
 							<a href="javascript:void(0);" class="whyareweasking">Why are we asking this?</a>
 						</div>
 					</div>
@@ -482,6 +502,319 @@
 		</div>
 		<script>
 
+			const PORTAL_ID = "246924680";
+			const FORM_GUID = "925f6028-68de-4806-9121-bb63e78e9ff2";
+
+			const HUBSPOT_FORM_URL =
+				`https://api.hsforms.com/submissions/v3/integration/submit/${PORTAL_ID}/${FORM_GUID}`;
+
+			// 0-1 is HubSpot's contact object type.
+			const CONTACT_OBJECT_TYPE_ID = "0-1";
+
+			const CUSTOM_PROPERTY_NAMES = {
+				houseType: "housetype",
+				roofType: "rooftype",
+				shadeAmount: "shade_amount",
+				ownershipStatus: "ownership_status",
+				monthlyElectricBill: "monthly_electric_bill_estimate",
+				electricityProvider: "electricity_provider"
+			};
+
+			function makeField(name, value) {
+				// Skip fields that were not provided.
+				if (
+					!name ||
+					name.startsWith("REPLACE_WITH_") ||
+					value === undefined ||
+					value === null ||
+					value === ""
+				) {
+					return null;
+				}
+
+				return {
+					objectTypeId: CONTACT_OBJECT_TYPE_ID,
+					name: name,
+					value: String(value)
+				};
+			}
+
+			function getHubSpotTrackingCookie() {
+				const cookie = document.cookie
+					.split("; ")
+					.find(row => row.startsWith("hubspotutk="));
+
+				if (!cookie) {
+					return null;
+				}
+
+				return decodeURIComponent(cookie.split("=")[1]);
+			}
+
+			async function submitToHubSpot(values) {
+				const fields = [
+					// Standard contact properties
+					makeField("firstname", values.firstName),
+					makeField("lastname", values.lastName),
+					makeField("email", values.email),
+					makeField("address", values.streetAddress),
+					makeField("city", values.city),
+					makeField("state", values.state),
+					makeField("zip", values.postalCode),
+					makeField("phone", values.phoneNumber),
+
+					// Custom properties
+					makeField(CUSTOM_PROPERTY_NAMES.houseType, values.houseType),
+					makeField(CUSTOM_PROPERTY_NAMES.roofType, values.roofType),
+					makeField(CUSTOM_PROPERTY_NAMES.shadeAmount, values.shadeAmount),
+					makeField(CUSTOM_PROPERTY_NAMES.ownershipStatus, values.ownershipStatus),
+					makeField(CUSTOM_PROPERTY_NAMES.monthlyElectricBill, values.monthlyElectricBill),
+					makeField(CUSTOM_PROPERTY_NAMES.electricityProvider, values.electricityProvider)
+				].filter(Boolean);
+
+				const hutk = getHubSpotTrackingCookie();
+
+				const payload = {
+					fields,
+					context: {
+						pageUri: window.location.href,
+						pageName: document.title
+					}
+				};
+
+				if (hutk) {
+					payload.context.hutk = hutk;
+				}
+
+				const response = await fetch(HUBSPOT_FORM_URL, {
+					method: "POST",
+					headers: {
+						"Content-Type": "application/json"
+					},
+					body: JSON.stringify(payload)
+				});
+
+				const result = await response.json().catch(() => ({}));
+
+				if (!response.ok) {
+					const errorDetails = Array.isArray(result.errors)
+						? result.errors
+								.map(error => `${error.errorType}: ${error.message}`)
+								.join("; ")
+						: "";
+
+					throw new Error(
+						errorDetails || `HubSpot rejected the submission with status ${response.status}`
+					);
+				}
+
+				return result;
+			}
+
+			const FIELD_LABELS = {
+				electricityProvider: "Electricity provider",
+				firstName: "First name",
+				lastName: "Last name",
+				streetAddress: "Street address",
+				city: "City",
+				postalCode: "Zip code",
+				state: "State",
+				email: "Email",
+				phoneNumber: "Phone number"
+			};
+
+			function fieldLabel($field){
+				return $field.attr("placeholder") || FIELD_LABELS[$field.attr("name")] || "This field";
+			}
+
+			function validateCurrentStep(){
+
+				let $step = $(".q-list > div:visible");
+				let $grid = $step.find(".answer-grid");
+				let $errorEl = $step.find(".q-step-error");
+
+				$step.find(".q-textbox").removeClass("invalid");
+				$errorEl.removeClass("show").text("");
+
+				if($grid.length){
+					return $grid.find("a.active").length > 0;
+				}
+
+				let $fields = $step.find(".q-textbox");
+
+				if(!$fields.length){
+					return true;
+				}
+
+				let errors = [];
+
+				$fields.each(function(){
+
+					let $f = $(this);
+					let val = $.trim($f.val());
+					let label = fieldLabel($f);
+
+					if(!val){
+						$f.addClass("invalid");
+						errors.push(label + " is required");
+						return;
+					}
+
+					let name = $f.attr("name");
+
+					if(name === "email" && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val)){
+						$f.addClass("invalid");
+						errors.push("Enter a valid email address");
+					}
+
+					if(name === "phoneNumber"){
+						let digits = val.replace(/\D/g,"");
+						if(digits.length < 7 || digits.length > 15){
+							$f.addClass("invalid");
+							errors.push("Enter a valid phone number");
+						}
+					}
+
+					if(name === "postalCode" && !/^\d{5}(-\d{4})?$/.test(val)){
+						$f.addClass("invalid");
+						errors.push("Enter a valid 5-digit zip code");
+					}
+
+				});
+
+				if(errors.length){
+					$errorEl.addClass("show").text(errors.join(". "));
+					return false;
+				}
+
+				return true;
+			}
+
+			function collectSurveyValues(){
+				return {
+					firstName: $('input[name="firstName"]').val(),
+					lastName: $('input[name="lastName"]').val(),
+					email: $('input[name="email"]').val(),
+					streetAddress: $('input[name="streetAddress"]').val(),
+					city: $('input[name="city"]').val(),
+					state: $('select[name="state"]').val(),
+					postalCode: $('input[name="postalCode"]').val(),
+					phoneNumber: $('input[name="phoneNumber"]').val(),
+
+					houseType: $('input[name="property_type"]').val(),
+					roofType: $('input[name="roof_type"]').val(),
+					shadeAmount: $('input[name="roof_shade"]').val(),
+					ownershipStatus: $('input[name="ownership_status"]').val(),
+					monthlyElectricBill: $('input[name="monthly_bill"]').val(),
+					electricityProvider: $('input[name="electricityProvider"]').val()
+				};
+			}
+
+			const SURVEY_STORAGE_KEY = "solarSurveyState_v1";
+			const SURVEY_STATE_TTL_MS = 24 * 60 * 60 * 1000;
+			const SURVEY_FIELD_NAMES = [
+				"property_type", "roof_shade", "roof_type", "ownership_status", "monthly_bill",
+				"electricityProvider", "firstName", "lastName", "streetAddress", "city",
+				"postalCode", "state", "email", "phoneNumber"
+			];
+
+			function getCurrentStepIndex(){
+				return $(".q-list > div").index($(".q-list > div:visible").first());
+			}
+
+			function saveFormState(){
+				let values = {};
+
+				SURVEY_FIELD_NAMES.forEach(function(name){
+					let $f = $('[name="' + name + '"]');
+					if($f.length){
+						values[name] = $f.val();
+					}
+				});
+
+				let state = {
+					values: values,
+					stepIndex: getCurrentStepIndex(),
+					savedAt: Date.now()
+				};
+
+				try{
+					localStorage.setItem(SURVEY_STORAGE_KEY, JSON.stringify(state));
+				}catch(e){}
+			}
+
+			function clearFormState(){
+				try{
+					localStorage.removeItem(SURVEY_STORAGE_KEY);
+				}catch(e){}
+			}
+
+			function restoreFormState(){
+				let raw;
+
+				try{
+					raw = localStorage.getItem(SURVEY_STORAGE_KEY);
+				}catch(e){
+					return;
+				}
+
+				if(!raw){
+					return;
+				}
+
+				let state;
+
+				try{
+					state = JSON.parse(raw);
+				}catch(e){
+					return;
+				}
+
+				if(!state || !state.values){
+					return;
+				}
+
+				if(state.savedAt && (Date.now() - state.savedAt) > SURVEY_STATE_TTL_MS){
+					clearFormState();
+					return;
+				}
+
+				$.each(state.values, function(name, value){
+					if(value === undefined || value === null || value === ""){
+						return;
+					}
+
+					let $f = $('[name="' + name + '"]');
+					if(!$f.length){
+						return;
+					}
+
+					$f.val(value);
+
+					if($f.is("input.q-hidden")){
+						let $question = $f.closest(".q-list > div");
+						$question.find(".answer-grid > a").removeClass("active").filter(function(){
+							return $(this).text().trim() === value;
+						}).addClass("active");
+					}
+				});
+
+				let $steps = $(".q-list > div");
+				let stepIndex = state.stepIndex;
+
+				if(typeof stepIndex === "number" && stepIndex > 0 && stepIndex < $steps.length){
+					$steps.hide().eq(stepIndex).show();
+
+					$(".q-counter > div").removeClass("active").eq(stepIndex).addClass("active");
+
+					$(".q-counter-txt > span:first-child").text(stepIndex + 1);
+
+					if($(".q-astrip > a.q-prev").length === 0){
+						$(".q-astrip").prepend('<a href="javascript:void(0);" class="btn-s btn-wht q-prev">Prev</a>');
+					}
+				}
+			}
+
 			function addmargintop(){
 				let x = $(".topbar-sticky").outerHeight();
 
@@ -502,23 +835,21 @@
 					}
 
 				}
+
+				restoreFormState();
 			});
 
 			$(document).on("click",".q-astrip a",function(){
 
 				let btn = $(this);
 
-				console.log($(".q-list > div:visible > .answer-grid").length);
-
-				if($(".q-list > div:visible > .answer-grid").length == 1){
-					var answercheck = $(".q-list > div:visible > .answer-grid > a.active").length;
-				}else{
-					var answercheck = 1;
+				if(btn.hasClass("disabled")){
+					return;
 				}
 
-				
+				let stepValid = btn.is(".q-next") ? validateCurrentStep() : true;
 
-				if(btn.is(".q-next") && answercheck > 0){
+				if(btn.is(".q-next") && stepValid){
 
 					if($(".q-list > div:visible").is(":not(:last-child)")){
 
@@ -535,11 +866,25 @@
 						if(qnum > 1 && qastrip < 2){
 							$(".q-astrip").prepend('<a href="javascript:void(0);" class="btn-s btn-wht q-prev">Prev</a>')
 						}
+
+						saveFormState();
 					}else{
 
-						//insert code for last button
+						let msg = $(".q-submit-msg");
 
-						alert("finish, insert script for last action");
+						btn.addClass("disabled").text("Submitting...");
+						msg.hide().removeClass("error").text("");
+
+						submitToHubSpot(collectSurveyValues())
+							.then(function(){
+								$(".q-list, .q-astrip").hide();
+								msg.addClass("success").text("Thanks! We've received your info and will be in touch shortly.").fadeIn();
+								clearFormState();
+							})
+							.catch(function(error){
+								btn.removeClass("disabled").text("Next");
+								msg.addClass("error").text(error.message || "Something went wrong submitting your info. Please try again.").fadeIn();
+							});
 
 					}
 
@@ -557,6 +902,8 @@
 					if(qnum <= 1 && qastrip >= 2){
 						$(".q-astrip > a:first-child").remove();
 					}
+
+					saveFormState();
 				}
 
 			});
@@ -585,10 +932,25 @@
 				$(this).parent().toggleClass("active");
 			});
 
+			$(document).on("input change",".q-textbox",function(){
+				$(this).removeClass("invalid");
+
+				let $step = $(this).closest(".q-list > div");
+				if($step.find(".q-textbox.invalid").length === 0){
+					$step.find(".q-step-error").removeClass("show").text("");
+				}
+
+				saveFormState();
+			});
+
 			$(document).on("click",".answer-grid a",function(){
 
 				$(".q-list > div:visible").first().find(".answer-grid > a").removeClass("active");
 				$(this).addClass("active");
+
+				$(this).closest(".q-list > div").find("input.q-hidden").val($(this).text().trim());
+
+				saveFormState();
 
 			});
 
