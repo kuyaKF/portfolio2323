@@ -1,230 +1,422 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
+		<script>
+			(function(){
+				try{
+					if(localStorage.getItem('theme') === 'light'){
+						document.documentElement.setAttribute('data-theme','light');
+					}
+				}catch(e){}
+			})();
+		</script>
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<!-- <meta http-equiv="refresh" content="16;url=URL" /> -->
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<title>Felix M. Angelo Jr. Portfolio</title>
-		<!-- Jquery -->
-		<script src="js/jquery-3.6.1.min.js"></script>
-		<!-- Normalize CSS -->
+		<meta name="description" content="Felix Angelo Jr., Front-end Web Developer. 18 shipped landing pages, surveys, forms and one full-stack website.">
+		<title>Felix Angelo Jr., Front-end Web Developer</title>
 		<link rel="stylesheet" href="css/normalize.min.css">
-		<!-- Custom CSS -->
-		<!-- <link rel="stylesheet" href="css/animate.css"> -->
 		<link rel="stylesheet" href="css/styles.css">
-		<!-- Masonry -->
-		<script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/4.2.2/masonry.pkgd.min.js" integrity="sha512-JRlcvSZAXT8+5SQQAvklXGJuxXTouyq8oIMaYERZQasB8SBDHZaUbeASsJWpk0UUrf89DP3/aefPPrlMR1h1yQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-		<script src="https://unpkg.com/imagesloaded@5/imagesloaded.pkgd.min.js"></script>
 	</head>
 	<body>
-		<div class="announcement">All my work are responsive and will fit all modern devices</div>
-		<div class="container">
-			<div class="side">
-				<div class="side-sticky">
-					<img src="img/kuyakf.jpg" class="user-dp">
-					<div class="myname">Felix M. Angelo Jr.</div>
-					<div class="user-title">Front-end Web Developer</div>
-				</div>
-			</div>
-			<div class="grid">
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/rituals-rip-2024/" target="_blank" class="live-view">Live view</a>
-							<div>Rituals Landing Page</div>
-						</div>
-						<div class="img-wrap"><img src="img/ritualslandingpage-desktop.png"></div>
+<!--
+THESIS: The work is the whole pitch. Screenshots stay visible, full size,
+on the page itself — nothing worth proving hides behind a click.
+OWN-WORLD: Bold, image-forward case-study list at agency/studio scale —
+horizontal media+body rows (image left, content right on desktop,
+stacked on mobile), confident display type, one committed accent green,
+quiet neutral ground. Small mono tags/hashtags are the only nod to the
+web-dev/tech thread; the imagery and copy carry the rest.
+STORY: A recruiter scans a list of 18 real, live builds — each with a
+screenshot, a real description, and a byline crediting who it was built
+for — and can filter/search, view the resume, or click straight through
+to any deployment.
+FIRST VIEWPORT: compact identity strip with a resume button, immediately
+followed by the list — proof stays visible, not gated behind interaction.
+FORM: standing/conventional direction, agency-studio quality bar, chosen
+after a first pipeline/dashboard direction hid previews behind a click.
+FINISH: unreviewed and undocumented is unfinished; this build ends with the
+finish review, the verdict, and DESIGN.md.
+-->
+			<svg class="cursor-ring" id="cursorRing" aria-hidden="true" viewBox="0 0 24 24"><polygon points="12,2 20,7 20,17 12,22 4,17 4,7"/></svg>
+			<div class="cursor-dot" id="cursorDot" aria-hidden="true"></div>
+
+			<div class="site">
+
+			<header class="intro">
+				<div class="who">
+					<img class="avatar" src="img/kuyakf.jpg" alt="Felix Angelo Jr.">
+					<div class="who-text">
+						<h1 class="name">Felix Angelo Jr.</h1>
+						<p class="tagline">Front-end Web Developer. 10+ yrs shipping marketing campaigns, now AI-assisted.</p>
 					</div>
 				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/checkantivirus.com-rip/" target="_blank" class="live-view">Live view</a>
-							<div>Anti-Virus Landing Page</div>
-						</div>
-						<div class="img-wrap"><img src="img/antiviruslandingpage-desktop.png"></div>
-					</div>
+				<div class="intro-actions">
+					<span class="status-pill"><span class="dot" aria-hidden="true"></span>open to work</span>
+					<button type="button" id="themeToggle" class="theme-toggle" aria-label="Switch to light theme" aria-pressed="false">
+						<svg class="icon icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+						<svg class="icon icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+					</button>
+					<a class="btn-resume" href="resume.pdf" download="felix-angelo-jr-resume.pdf">
+						resume
+						<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M12 3v12"/><path d="M6 11l6 6 6-6"/><path d="M4 21h16"/></svg>
+					</a>
 				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/nikeair-lp/" target="_blank" class="live-view">Live view</a>
-							<div>Nike Air Landing Page</div>
-						</div>
-						<div class="img-wrap"><img src="img/nikeairforcelandingpage-desktop.png"></div>
-					</div>
+			</header>
+
+			<p class="collection-note">200+ landing pages shipped since 2014. These 18 are the handpicked best of that work.</p>
+
+			<nav class="filters" aria-label="Filter projects">
+				<div class="filter-chips" role="group" aria-label="Filter by category">
+					<button type="button" class="chip is-active" data-filter="all">all <span class="count">18</span></button>
+					<button type="button" class="chip" data-filter="website">website <span class="count">1</span></button>
+					<button type="button" class="chip" data-filter="landing_pages">landing pages <span class="count">16</span></button>
+					<button type="button" class="chip" data-filter="prototyping_forms">forms <span class="count">1</span></button>
 				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/solar-alt/" target="_blank" class="live-view">Live view</a>
-							<div>Home Service Installers - Solar Panel Landing Page</div>
-						</div>
-						<div class="img-wrap"><img src="img/solaraltlp-desktop.png"></div>
-					</div>
+				<div class="search-wrap">
+					<svg class="icon icon-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+					<input type="text" id="filter" class="filter-input" placeholder="search projects&hellip;" aria-label="Search projects by name">
 				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/tmrwtoday-iphone15/" target="_blank" class="live-view">Live view</a>
-							<div>iPhone 15 Landing Page</div>
+			</nav>
+
+			<main class="grid" id="grid">
+
+				<article class="project" data-category="website" data-name="LPBEM School Website">
+					<a class="project-media" href="https://lpbem.com/" target="_blank" rel="noopener">
+						<img src="img/lpbem-desktop.png" alt="LPBEM School Website desktop screenshot" loading="lazy">
+						<span class="project-tag is-fullstack">#fullstack</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">LPBEM School Website</h2>
+						<p class="project-desc">The official website for Las Pi&ntilde;as Baptist Educational Ministry, owned end-to-end: backend, frontend, and CMS. A full production site for a real school community, not a campaign replica.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/lpbem-logo.png" alt="LPBEM">
+								<span class="project-byline-text">LPBEM <span class="dim">&middot; 2026</span></span>
+							</div>
+							<a class="project-cta" href="https://lpbem.com/" target="_blank" rel="noopener">view live website&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/iphone15-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/splittestsolar-orange-survey/" target="_blank" class="live-view">Live view</a>
-							<div>Striveagle Solar Panel Survey</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Rituals Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/rituals-rip-2024/" target="_blank" rel="noopener">
+						<img src="img/ritualslandingpage-desktop.png" alt="Rituals Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Rituals Landing Page</h2>
+						<p class="project-desc">A marketing campaign landing page rebuilt for Rituals, converting a PSD/Figma concept into a responsive, cross-device page ready for paid traffic. Built for a fast path from hero to offer.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2024</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/rituals-rip-2024/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/solarpanel1-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-blue-lp/" target="_blank" class="live-view">Live view</a>
-							<div>Striveagle Medicare Blue Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Anti-Virus Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/checkantivirus.com-rip/" target="_blank" rel="noopener">
+						<img src="img/antiviruslandingpage-desktop.png" alt="Anti-Virus Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Anti-Virus Landing Page</h2>
+						<p class="project-desc">A security-software campaign page built for a fast-turnaround paid-traffic launch. Responsive layout designed to convert visitors quickly across desktop and mobile.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2024</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/checkantivirus.com-rip/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/striveagleblue-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-purple-lp/" target="_blank" class="live-view">Live view</a>
-							<div>Striveagle Medicare Purple Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Nike Air Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/nikeair-lp/" target="_blank" rel="noopener">
+						<img src="img/nikeairforcelandingpage-desktop.png" alt="Nike Air Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Nike Air Landing Page</h2>
+						<p class="project-desc">A product-drop landing page for a Nike Air Force campaign, built for speed on mobile ad traffic with a direct path to the offer.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2024</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/nikeair-lp/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/striveaglepurple-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-redlp/" target="_blank" class="live-view">Live view</a>
-							<div>Striveagle Red Firm Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Home Service Installers Solar Panel Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/solar-alt/" target="_blank" rel="noopener">
+						<img src="img/solaraltlp-desktop.png" alt="Home Service Installers Solar Panel Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Home Service Installers Solar Panel Landing Page</h2>
+						<p class="project-desc">A lead-generation landing page for a solar installer campaign, with a form-first layout tuned for conversion and quick homeowner qualification.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2024</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/solar-alt/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/striveaglered-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-survey-splittest/" target="_blank" class="live-view">Live view</a>
-							<div>Striveagle Medicare Simple Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="iPhone 15 Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/tmrwtoday-iphone15/" target="_blank" rel="noopener">
+						<img src="img/iphone15-desktop.jpg" alt="iPhone 15 Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">iPhone 15 Landing Page</h2>
+						<p class="project-desc">A product-launch campaign page for the iPhone 15, built for a limited promotional window and optimized for a short, high-traffic launch period.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/tmrwtoday-iphone15/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/stsimple-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/nedealand-survey/" target="_blank" class="live-view">Live view</a>
-							<div>Nedealand Solar Panel Survey</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Striveagle Solar Panel Survey">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/splittestsolar-orange-survey/" target="_blank" rel="noopener">
+						<img src="img/solarpanel1-desktop.jpg" alt="Striveagle Solar Panel Survey desktop screenshot" loading="lazy">
+						<span class="project-tag is-survey">#survey</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Striveagle Solar Panel Survey</h2>
+						<p class="project-desc">A multi-step solar-quote survey built as a split-test variant for a lead-generation campaign, guiding visitors through a short qualification flow.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/splittestsolar-orange-survey/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/nedealandlp-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/prototyping_forms/amazon-payment/" target="_blank" class="live-view">Live view</a>
-							<div>Amazon Payment Form</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Striveagle Medicare Blue Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-blue-lp/" target="_blank" rel="noopener">
+						<img src="img/striveagleblue-desktop.jpg" alt="Striveagle Medicare Blue Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Striveagle Medicare Blue Landing Page</h2>
+						<p class="project-desc">A Medicare enrollment campaign page, blue palette variant, built for a regulated-industry lead-generation flow as part of a palette split-test series.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-blue-lp/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/amazonpaymentform-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/prototyping_forms/cc-template/" target="_blank" class="live-view">Live view</a>
-							<div>Generic Credit Card Payment Form Template</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Striveagle Medicare Purple Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-purple-lp/" target="_blank" rel="noopener">
+						<img src="img/striveaglepurple-desktop.jpg" alt="Striveagle Medicare Purple Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Striveagle Medicare Purple Landing Page</h2>
+						<p class="project-desc">A Medicare enrollment campaign page, purple palette variant, split-tested against the blue and red builds in the same Striveagle series.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-medicare-purple-lp/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/ccformgen-desktop.jpg"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/prototyping_forms/black-red-form/" target="_blank" class="live-view">Live view</a>
-							<div>Black and Red Form</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Striveagle Red Firm Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-redlp/" target="_blank" rel="noopener">
+						<img src="img/striveaglered-desktop.jpg" alt="Striveagle Red Firm Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Striveagle Red Firm Landing Page</h2>
+						<p class="project-desc">A Medicare enrollment campaign page, red firm variant, the third palette split-test in the Striveagle Medicare series.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-redlp/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/black-red-form-desktop.png"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/sector-alarm/" target="_blank" class="live-view">Live view</a>
-							<div>Sector Alarm Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Striveagle Medicare Simple Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-survey-splittest/" target="_blank" rel="noopener">
+						<img src="img/stsimple-desktop.jpg" alt="Striveagle Medicare Simple Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-survey">#survey</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Striveagle Medicare Simple Landing Page</h2>
+						<p class="project-desc">A simplified, single-question variant of the Medicare survey flow, stripped down for a faster-loading split test against the fuller survey builds.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/striveagle-survey-splittest/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/sector-alarm-desktop.png"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/onlinestreaming-lp-rip/" target="_blank" class="live-view">Live view</a>
-							<div>Online Streaming Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Nedealand Solar Panel Survey">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/nedealand-survey/" target="_blank" rel="noopener">
+						<img src="img/nedealandlp-desktop.jpg" alt="Nedealand Solar Panel Survey desktop screenshot" loading="lazy">
+						<span class="project-tag is-survey">#survey</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Nedealand Solar Panel Survey</h2>
+						<p class="project-desc">A localized, multi-step solar-quote survey built for the Dutch market under the Nedealand campaign, guiding visitors through a short qualification flow.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2023</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/nedealand-survey/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/onlinestreaming-lp-desktop.png"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/jakevstyson/" target="_blank" class="live-view">Live view</a>
-							<div>Jake Paul vs Mike Tyson Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Sector Alarm Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/sector-alarm/" target="_blank" rel="noopener">
+						<img src="img/sector-alarm-desktop.png" alt="Sector Alarm Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Sector Alarm Landing Page</h2>
+						<p class="project-desc">A home-security campaign page for Sector Alarm, built as a conversion-focused landing page for paid traffic.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/sector-alarm/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/jaketyson-lp-desktop.png"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/bespaarkampioen/" target="_blank" class="live-view">Live view</a>
-							<div>Bespaarkampioen Energy Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Online Streaming Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/onlinestreaming-lp-rip/" target="_blank" rel="noopener">
+						<img src="img/onlinestreaming-lp-desktop.png" alt="Online Streaming Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Online Streaming Landing Page</h2>
+						<p class="project-desc">A subscription-offer campaign page for a streaming service, built for a fast paid-media launch with a clear single call to action.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/onlinestreaming-lp-rip/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/bespaarkampioen-desktop.png"></div>
 					</div>
-				</div>
-				<div class="grid-item">
-					<div class="item-card">
-						<div class="action-strip">
-							<a href="https://kuyakf.github.io/portfolio/landing_pages/popmart-labubu-qt2/" target="_blank" class="live-view">Live view</a>
-							<div>PopMart Labubu Survey Landing Page</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Jake Paul vs Mike Tyson Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/jakevstyson/" target="_blank" rel="noopener">
+						<img src="img/jaketyson-lp-desktop.png" alt="Jake Paul vs Mike Tyson Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Jake Paul vs Mike Tyson Landing Page</h2>
+						<p class="project-desc">An event-hype campaign page for the Jake Paul vs. Mike Tyson fight, built to a hard launch deadline ahead of the event.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/jakevstyson/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
 						</div>
-						<div class="img-wrap"><img src="img/popmart-labubu-qt2-desktop.png"></div>
 					</div>
-				</div>
-			</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="Bespaarkampioen Energy Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/bespaarkampioen/" target="_blank" rel="noopener">
+						<img src="img/bespaarkampioen-desktop.png" alt="Bespaarkampioen Energy Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-landingpage">#landingpage</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Bespaarkampioen Energy Landing Page</h2>
+						<p class="project-desc">A Dutch energy-savings campaign with a multi-page flow, including OTP verification and follow-up pages, beyond a single landing page.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/bespaarkampioen/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
+						</div>
+					</div>
+				</article>
+
+				<article class="project" data-category="landing_pages" data-name="PopMart Labubu Survey Landing Page">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/landing_pages/popmart-labubu-qt2/" target="_blank" rel="noopener">
+						<img src="img/popmart-labubu-qt2-desktop.png" alt="PopMart Labubu Survey Landing Page desktop screenshot" loading="lazy">
+						<span class="project-tag is-survey">#survey</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">PopMart Labubu Survey Landing Page</h2>
+						<p class="project-desc">A collectible-drop survey/quiz page for a PopMart Labubu campaign, the most recent build shipped in this portfolio.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/landing_pages/popmart-labubu-qt2/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
+						</div>
+					</div>
+				</article>
+
+
+				<article class="project" data-category="prototyping_forms" data-name="Black and Red Form">
+					<a class="project-media" href="https://kuyakf.github.io/portfolio/prototyping_forms/black-red-form/" target="_blank" rel="noopener">
+						<img src="img/black-red-form-desktop.png" alt="Black and Red Form desktop screenshot" loading="lazy">
+						<span class="project-tag is-form">#form</span>
+					</a>
+					<div class="project-body">
+						<h2 class="project-title">Black and Red Form</h2>
+						<p class="project-desc">A high-contrast form prototype exploring a bold black-and-red palette on a checkout-style layout.</p>
+						<div class="project-footer">
+							<div class="project-byline">
+								<img class="project-avatar" src="img/vipresponse-logo.png" alt="VIP Response.nl">
+								<span class="project-byline-text">VIP Response.nl <span class="dim">&middot; 2025</span></span>
+							</div>
+							<a class="project-cta" href="https://kuyakf.github.io/portfolio/prototyping_forms/black-red-form/" target="_blank" rel="noopener">view live demo&nbsp;&rarr;</a>
+						</div>
+					</div>
+				</article>
+
+			</main>
+
+			<p class="empty-state" id="emptyState" hidden>No projects match &ldquo;<span id="emptyQuery"></span>&rdquo;</p>
+
+			<footer class="footer">
+				<p><a href="mailto:angelojr.felix@gmail.com">angelojr.felix@gmail.com</a></p>
+				<p class="dim">18/18 projects live. Built static, shipped honest.</p>
+			</footer>
+
 		</div>
-		<script>
 
-			$(function(){
-				var $grid = $('.grid').masonry({
-				  // set itemSelector so .grid-sizer is not used in layout
-				  itemSelector: '.grid-item',
-				  // use element for option
-				  columnWidth: '.grid-item',
-				  percentPosition: true
-				});
-
-				$grid.imagesLoaded().progress( function() {
-				  $grid.masonry('layout');
-				});
-
-				$(".grid-item").hover(function(){
-					$(".grid-item").addClass("inactive");
-					$(this).toggleClass("inactive active");
-				},function(){
-
-					$(".grid-item").removeClass("active inactive");
-				});
-			});
-
-		</script>
+		<script src="js/app.js"></script>
 	</body>
 </html>
